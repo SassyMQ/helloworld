@@ -30,6 +30,15 @@ export class Home {
             // Do something here with <b>reply.body.</b>
          });
         
+        
+         // Say "Goodbye" to World
+         // Say byby
+         var payload = this.programmer.createPayload();
+         payload. = {...};
+         this.programmer.Goodbye(payload, (reply) {
+            // Do something here with <b>reply.body.</b>
+         });
+        
 
         
          <b>// Listen for messages</b>
@@ -76,6 +85,13 @@ export class Home {
          // Hear Hello from Programmer
          // The Programmer, says "Hello" to the World
          this.world.onHello((message) {
+            // Do something here with <b>message.body.</b>
+         });
+        
+        
+         // Hear Goodbye from Programmer
+         // Say byby
+         this.world.onGoodbye((message) {
             // Do something here with <b>message.body.</b>
          });
         

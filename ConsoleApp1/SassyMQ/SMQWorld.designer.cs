@@ -27,6 +27,10 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
                         this.OnProgrammerHelloReceived(payload, bdea);
                         break;
                     
+                    case "world.general.programmer.goodbye":
+                        this.OnProgrammerGoodbyeReceived(payload, bdea);
+                        break;
+                    
                 }
 
             }
@@ -49,6 +53,20 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.ProgrammerHelloReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: Goodbye from Programmer
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> ProgrammerGoodbyeReceived;
+        protected virtual void OnProgrammerGoodbyeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.ProgrammerGoodbyeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.ProgrammerGoodbyeReceived(this, plea);
             }
         }
 

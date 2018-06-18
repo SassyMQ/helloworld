@@ -13,6 +13,7 @@ type ProgrammerActions interface {
 	Init()
 	
     Hello()
+    Goodbye()
 }
 
 func (p *Programmer) Init(connStr string) {
@@ -29,6 +30,18 @@ func (p *Programmer) HelloStr(payloadContent string, replyHandler interface{}) e
 func (p *Programmer) Hello(payload *Payload, replyHandler interface{}) error {
 	err := p.SendPayload("world.general.programmer.hello", payload, replyHandler)
     fmt.Println("Sending payload to: 'world.general.programmer.hello' - ", payload.PayloadId)
+	return err
+}
+    
+func (p *Programmer) GoodbyeStr(payloadContent string, replyHandler interface{}) error {
+    payload := p.CreatePayload()
+    payload.Content = payloadContent
+    return p.Goodbye(payload, replyHandler)
+}    
+
+func (p *Programmer) Goodbye(payload *Payload, replyHandler interface{}) error {
+	err := p.SendPayload("world.general.programmer.goodbye", payload, replyHandler)
+    fmt.Println("Sending payload to: 'world.general.programmer.goodbye' - ", payload.PayloadId)
 	return err
 }
     

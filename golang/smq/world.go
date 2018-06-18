@@ -39,5 +39,9 @@ func (p *World) AddProgrammerHelloHandler(value interface{}) error {
 	err := p.AddHandler("world.general.programmer.hello", value)
 	return err
 }
+func (p *World) AddProgrammerGoodbyeHandler(value interface{}) error {
+	err := p.AddHandler("world.general.programmer.goodbye", value)
+	return err
+}
 
     

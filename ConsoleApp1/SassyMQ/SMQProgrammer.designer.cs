@@ -76,6 +76,30 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
         {
             return this.SendMessage("world.general.programmer.hello", payload, replyHandler, timeoutHandler, waitTimeout);
         }
+        /// <summary>
+        /// Goodbye - Say byby
+        /// </summary>
+        public Task Goodbye(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.Goodbye(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }    
+
+        /// <summary>
+        /// Goodbye - Say byby
+        /// </summary>
+        public Task Goodbye(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.Goodbye(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// Goodbye - Say byby
+        /// </summary>
+        public Task Goodbye(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("world.general.programmer.goodbye", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
     }
 }
 
