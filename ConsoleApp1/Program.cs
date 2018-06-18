@@ -15,6 +15,13 @@ namespace ConsoleApp1
             var world = new SMQWorld("amqp://guest:guest@localhost/SMQ");
 
             world.ProgrammerHelloReceived += World_ProgrammerHelloReceived;
+
+            world.ProgrammerGoodbyeReceived += World_ProgrammerGoodbyeReceived;
+        }
+
+        private static void World_ProgrammerGoodbyeReceived(object sender, PayloadEventArgs e)
+        {
+            Console.WriteLine("Got goodbye from programmer");
         }
 
         private static void World_ProgrammerHelloReceived(object sender, PayloadEventArgs e)

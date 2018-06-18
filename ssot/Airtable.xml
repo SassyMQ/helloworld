@@ -1,0 +1,184 @@
+<Airtable>
+  <Entities>
+    <Entity>
+      <EntityId>recD1iNSXEea4TIxi</EntityId>
+      <createdTime>2018-05-15T16:23:15Z</createdTime>
+      <PluralName>Galaxies</PluralName>
+      <Name>Galaxy</Name>
+      <DisplayName>Galaxy</DisplayName>
+      <AirtableName>Galaxies</AirtableName>
+    </Entity>
+    <Entity>
+      <EntityId>recWdXU0TsXSCWV4i</EntityId>
+      <createdTime>2018-06-18T00:49:16Z</createdTime>
+      <PluralName>Astronomers</PluralName>
+      <Name>Astronomer</Name>
+      <DisplayName>Astronomer</DisplayName>
+      <AirtableName>Astronomers</AirtableName>
+    </Entity>
+    <Entity>
+      <EntityId>recfJPRymyjtYLjhZ</EntityId>
+      <createdTime>2018-05-15T16:23:15Z</createdTime>
+      <PluralName>Stars</PluralName>
+      <Name>Star</Name>
+      <DisplayName>Star</DisplayName>
+      <AirtableName>Stars</AirtableName>
+    </Entity>
+    <Entity>
+      <EntityId>recrnwzQfiAhuTClP</EntityId>
+      <createdTime>2018-05-15T16:23:15Z</createdTime>
+      <PluralName>Entities</PluralName>
+      <Name>Entity</Name>
+      <IsSystem>true</IsSystem>
+      <DisplayName>Entity</DisplayName>
+      <AirtableName>Entities</AirtableName>
+    </Entity>
+  </Entities>
+  <Galaxies>
+    <Galaxy>
+      <GalaxyId>recH4wXkMEd5S4pUf</GalaxyId>
+      <createdTime>2018-05-15T16:19:00Z</createdTime>
+      <FirstSeen>2018</FirstSeen>
+      <Name>Milky Way</Name>
+      <HaveVisited>true</HaveVisited>
+      <Stars>rec4OZu12JfXa8NhZ</Stars>
+      <Stars>reckXigFuEaoPr8k8</Stars>
+      <Attachments>
+        <AttachmentsId>attodXLby4vEs0a9s</AttachmentsId>
+        <url>https://dl.airtable.com/ZRkGE6OxS9a08rXA6oUQ_milky-way-2.adapt.945.1.jpg</url>
+        <filename>milky-way-2.adapt.945.1.jpg</filename>
+        <size>84663</size>
+        <type>image/jpeg</type>
+        <thumbnails>
+          <small>
+            <url>https://dl.airtable.com/egRspYWwQVixNelPx1UZ_small_milky-way-2.adapt.945.1.jpg</url>
+            <width>64</width>
+            <height>36</height>
+          </small>
+          <large>
+            <url>https://dl.airtable.com/gcVKgpi7SpEZE2mZKyTg_large_milky-way-2.adapt.945.1.jpg</url>
+            <width>911</width>
+            <height>512</height>
+          </large>
+          <full>
+            <url>https://dl.airtable.com/PoIa3X9KTiiRVCeGFzHP_full_milky-way-2.adapt.945.1.jpg</url>
+            <width>945</width>
+            <height>531</height>
+          </full>
+        </thumbnails>
+      </Attachments>
+      <Notes>fadsf
+fdsa
+
+</Notes>
+    </Galaxy>
+    <Galaxy>
+      <GalaxyId>reco5yAJlcUMSsWyf</GalaxyId>
+      <createdTime>2018-05-15T16:19:00Z</createdTime>
+      <FirstSeen>1500</FirstSeen>
+      <Name>Andromeda</Name>
+      <Stars>rec99vLonTpbG6fZS</Stars>
+      <Stars>recxrcWyXxL6KA83R</Stars>
+      <Notes>asdfasd
+</Notes>
+    </Galaxy>
+    <Galaxy>
+      <GalaxyId>recxdClgul2sqgv4i</GalaxyId>
+      <createdTime>2018-05-25T22:27:55Z</createdTime>
+      <FirstSeen>1270</FirstSeen>
+      <Name>Some Other Galax</Name>
+      <Stars>recutl0fSpATFivMb</Stars>
+      <Attachments>
+        <AttachmentsId>attrNFenxf4RRaeft</AttachmentsId>
+        <url>https://dl.airtable.com/gC8F6uNvRv2tBjtM6x1V_andromeda.jpg</url>
+        <filename>andromeda.jpg</filename>
+        <size>466523</size>
+        <type>image/jpeg</type>
+        <thumbnails>
+          <small>
+            <url>https://dl.airtable.com/bAxLrP2dQQSZY9evnimK_small_andromeda.jpg</url>
+            <width>48</width>
+            <height>36</height>
+          </small>
+          <large>
+            <url>https://dl.airtable.com/RlAGGRdeSUOiRDpCfjTZ_large_andromeda.jpg</url>
+            <width>678</width>
+            <height>512</height>
+          </large>
+          <full>
+            <url>https://dl.airtable.com/k7OQf6JoRdCRPtOcXuYm_full_andromeda.jpg</url>
+            <width>1920</width>
+            <height>1450</height>
+          </full>
+        </thumbnails>
+      </Attachments>
+    </Galaxy>
+  </Galaxies>
+  <Astronomers>
+    <Astronomer>
+      <AstronomerId>rec9gnOWBVCMa3zwB</AstronomerId>
+      <createdTime>2018-06-18T00:48:05Z</createdTime>
+      <Stars>rec99vLonTpbG6fZS</Stars>
+      <Name>Someone Else</Name>
+    </Astronomer>
+    <Astronomer>
+      <AstronomerId>reccqYz7vYutdrXWQ</AstronomerId>
+      <createdTime>2018-06-18T00:48:05Z</createdTime>
+      <Name>Another Guy</Name>
+    </Astronomer>
+    <Astronomer>
+      <AstronomerId>recuwCgXwqQFaLgym</AstronomerId>
+      <createdTime>2018-06-18T00:48:05Z</createdTime>
+      <Stars>rec4OZu12JfXa8NhZ</Stars>
+      <Stars>reckXigFuEaoPr8k8</Stars>
+      <Name>Galalao</Name>
+    </Astronomer>
+  </Astronomers>
+  <Stars>
+    <Star>
+      <StarId>rec4OZu12JfXa8NhZ</StarId>
+      <createdTime>2018-05-15T16:19:47Z</createdTime>
+      <FoundBy>recuwCgXwqQFaLgym</FoundBy>
+      <NasaID>BAC1235</NasaID>
+      <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
+      <Name>Earths Sun</Name>
+      <Notes>fdfdsfdsf
+</Notes>
+    </Star>
+    <Star>
+      <StarId>rec99vLonTpbG6fZS</StarId>
+      <createdTime>2018-05-15T16:19:47Z</createdTime>
+      <FoundBy>rec9gnOWBVCMa3zwB</FoundBy>
+      <NasaID>DXY1553</NasaID>
+      <Galaxy>reco5yAJlcUMSsWyf</Galaxy>
+      <Name>Alpha Centauri</Name>
+      <Notes>dfdfd
+</Notes>
+    </Star>
+    <Star>
+      <StarId>recgMrUvkZ0XAlHax</StarId>
+      <createdTime>2018-05-25T22:27:07Z</createdTime>
+      <Name>Star 5</Name>
+    </Star>
+    <Star>
+      <StarId>reckXigFuEaoPr8k8</StarId>
+      <createdTime>2018-05-15T16:19:47Z</createdTime>
+      <FoundBy>recuwCgXwqQFaLgym</FoundBy>
+      <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
+      <Name>Some Other Star</Name>
+      <Notes>fdfds</Notes>
+    </Star>
+    <Star>
+      <StarId>recutl0fSpATFivMb</StarId>
+      <createdTime>2018-05-25T22:27:04Z</createdTime>
+      <Galaxy>recxdClgul2sqgv4i</Galaxy>
+      <Name>Some Other Galax</Name>
+    </Star>
+    <Star>
+      <StarId>recxrcWyXxL6KA83R</StarId>
+      <createdTime>2018-05-25T22:27:07Z</createdTime>
+      <Galaxy>reco5yAJlcUMSsWyf</Galaxy>
+      <Name>Another galaxy</Name>
+    </Star>
+  </Stars>
+</Airtable>

@@ -200,6 +200,309 @@
       "Name": "SmqlToCSharpRabbitMQ",
       "RelativePath": "/ConsoleApp1/SassyMQ",
       "CommandLine": "sassymq/smql-to-csharp-rabbitmq -i ../../ssot/Lexicon.smql -p legacy=false"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "19d8142a-2f4d-46ac-9de6-77441f233192",
+        "AccountHolderId": "c2bb89f9-26da-4ebf-9d35-0c4547eb89e2",
+        "Name": "AirtableToXml",
+        "DisplayName": "Airtable To Xml",
+        "Description": "Extracts the contents of an airtable base as a single Xml file.",
+        "CreatedOn": "2018-04-07T21:28:06.273",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-IRUHFp3DWm_1ZMkImWGFKw",
+        "LowerName": "airtabletoxml",
+        "UpperName": "AIRTABLETOXML",
+        "LowerHyphenName": "airtable-to-xml",
+        "InputDescriptionMD": "-p baseId={the base id} -p apiKey={your api key}",
+        "OutputDescriptionMD": "Airtable.xml",
+        "ExampleMD": "",
+        "InputFileTypeId": "2748dae4-2e34-44b1-a268-554f2b1c3330",
+        "OutputFileTypeId": "8c1bfcc6-a4de-4604-b785-9aa677c5302a",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "7f5dec02-6a37-4a68-9f32-ba0b5c79b495",
+            "TranspilerId": "19d8142a-2f4d-46ac-9de6-77441f233192",
+            "Name": "v1",
+            "CreatedOn": "2018-04-07T21:28:32.023",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "9e1b4c05-9103-4d8f-84f0-47850ee3e478",
+      "Name": "AirtableToXml",
+      "RelativePath": "/ssot",
+      "CommandLine": "airtable/airtable-to-xml -p baseId=appnTbSwcjTtn3QYW"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "115c5d82-5cb8-4765-80df-32468b589fd5",
+        "AccountHolderId": "c2bb89f9-26da-4ebf-9d35-0c4547eb89e2",
+        "Name": "AirtableXmlToOdxml",
+        "DisplayName": "Airtable Xml To Odxml",
+        "Description": "Airtable Xml To Odxml",
+        "CreatedOn": "2018-04-08T14:09:08.08",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-Ht8ctlrbL5byiQ07jminbg",
+        "LowerName": "airtablexmltoodxml",
+        "UpperName": "AIRTABLEXMLTOODXML",
+        "LowerHyphenName": "airtable-xml-to-odxml",
+        "ReadMeMD": "$include-system-entities = 'false'\r\n$project-name = 'dbo'",
+        "InputFileTypeId": "8c1bfcc6-a4de-4604-b785-9aa677c5302a",
+        "OutputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "c9eeec93-8f40-472c-8828-d92830e5d9c0",
+            "TranspilerId": "115c5d82-5cb8-4765-80df-32468b589fd5",
+            "Name": "v1",
+            "CreatedOn": "2018-04-08T14:09:47.173",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "85acd43b-752f-4150-8995-3aa6119cc283",
+      "Name": "AirtableXmlToOdxml",
+      "RelativePath": "/ODXML",
+      "CommandLine": "airtable/airtable-xml-to-odxml -i ../ssot/Airtable.xml -o DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "8defe7a3-89cf-4989-b679-d9226519f622",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToNodeJSDocs",
+        "DisplayName": "Odxml To Node J S Docs",
+        "Description": "Creates easy to read/navigate html documentation for an Odxml Schema.",
+        "CreatedOn": "2017-08-29T21:18:01.293",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-038mgzT3ATTpDx-Ekoww0w",
+        "LowerName": "odxmltonodejsdocs",
+        "UpperName": "ODXMLTONODEJSDOCS",
+        "LowerHyphenName": "odxml-to-node-j-s-docs",
+        "ReadMeMD": "Examines the schema defined by an Odxml file and creates an interactive DataModel explorer for exploring the structure of the data model defined. \r\n\r\nCreates both a single page version of the docs, as well as a Node.JS website that can be started on demand to explore the data model more interactively.",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "d8fc84b7-442d-4c7a-92a0-eefc11391934",
+        "Category": "documentation",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "26af4ad8-fb5d-4027-8e4b-2260c62f3f24",
+            "TranspilerId": "8defe7a3-89cf-4989-b679-d9226519f622",
+            "Name": "v1",
+            "CreatedOn": "2017-08-29T21:18:03.463",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "404c424b-926c-4c3c-aadb-fea9d57f235f",
+      "Name": "OdxmlToNodeJSDocs",
+      "RelativePath": "/docs/schema",
+      "CommandLine": "odxml42/odxml-to-nodejs-docs -i ../../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "595b7fe7-7f64-44c2-b48c-d096d997211f",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToCSharpPOCOs",
+        "DisplayName": "Odxml To C Sharp P O C Os",
+        "Description": "Odxml To CSharp POCOs",
+        "CreatedOn": "2017-09-07T17:35:30.24",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-ClFrnG6AMwloJkLnUQ2d3Q",
+        "LowerName": "odxmltocsharppocos",
+        "UpperName": "ODXMLTOCSHARPPOCOS",
+        "LowerHyphenName": "odxml-to-c-sharp-p-o-c-os",
+        "ReadMeMD": "param name=\"include-list-prefix\" select=\"true\"\r\nWill include the fieldname of the referenced object before lists so that if a child object has multiple references to an object, the collections on the parent will be distinguished by the name of the child properties.\r\n\r\nparam name=include-sdm-expand=false\r\nparam name=include-load-methods=true\r\n\r\nparam name=\"include-inheritance\" select=\"true\"\r\nIf a relationship exists on the primary key fo the object, it will be infered to \"descend\" from the refrenced object.\r\n\r\nparam name=\"pluralize-json-references\" select=\"true\"\r\nDetermines if the \"original name\" should be pluraized in the Json serialization header.\r\n\r\nparam name=sdm--namespace = 'using KP.ODXML7.SqlDataManager.{project-name}.SqlDataManagement;'\r\n\r\n\r\nparam name=extensions-namespace = 'CoreLibrary.Extensions'\r\n\r\nparam name=serialize-to-original-names=\"'false\"  \r\nInidicates if the json formatting should use original names\r\n\r\nparam name=\"csproj-filename\" = ''\r\nparam name=\"output-csproj-filename\" = ''\r\nparam name=\"relative-path\" = ''\r\n",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "47f5fc9f-0c22-4f73-8d18-0544a7f05d7b",
+        "Category": "dot-net",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "a52a5130-bd3c-4974-8def-374cd52a4592",
+            "TranspilerId": "595b7fe7-7f64-44c2-b48c-d096d997211f",
+            "Name": "v1",
+            "CreatedOn": "2017-09-07T17:35:33.567",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "52f35fe3-9dc3-4f29-bdd1-1f597190a01c",
+      "Name": "OdxmlToCSharpPOCOs",
+      "RelativePath": "/ConsoleApp1/DataClasses",
+      "CommandLine": "odxml42/odxml-to-csharp-pocos -i ../../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "ccea0ffb-6635-4929-bb72-a54ed716d27c",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToSqlServerCreateDb",
+        "DisplayName": "Odxml To Sql Server Create Db",
+        "Description": "OdxmlToSqlServerCreateDb",
+        "CreatedOn": "2017-06-05T18:08:36",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-038mgzT3ATTpDx-Ekoww0w",
+        "LowerName": "odxmltosqlservercreatedb",
+        "UpperName": "ODXMLTOSQLSERVERCREATEDB",
+        "LowerHyphenName": "odxml-to-sql-server-create-db",
+        "ReadMeMD": "Adds any missing tables and relationships in a SQL Server database based on an ODXML Schema description.",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "1136a8fc-7ced-47c2-b08d-1ff447a82b01",
+        "Category": "sql-server",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "726b9dd3-03ce-48f7-9de2-b4eb284d97b0",
+            "TranspilerId": "ccea0ffb-6635-4929-bb72-a54ed716d27c",
+            "Name": "v1",
+            "CreatedOn": "2017-06-05T18:08:46.617",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "4c3a4130-c1e1-47f2-849a-cfb5abb725f3",
+      "Name": "OdxmlToSqlServerCreateDb",
+      "RelativePath": "/sql",
+      "CommandLine": "odxml42/odxml-to-sql-server-createdb -i ../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "1cbd15d4-18df-47a8-8a08-83d9544baa11",
+        "AccountHolderId": "c2bb89f9-26da-4ebf-9d35-0c4547eb89e2",
+        "Name": "AirtableXmlToSqlServerUpsert",
+        "DisplayName": "Airtable Xml To Sql Server Upsert",
+        "Description": "Creates a SQL Server script to update/insert data (or static data) from the airtable db.",
+        "CreatedOn": "2018-04-12T21:36:05.25",
+        "IsActive": true,
+        "CurrentRoutingKey": "",
+        "LowerName": "airtablexmltosqlserverupsert",
+        "UpperName": "AIRTABLEXMLTOSQLSERVERUPSERT",
+        "LowerHyphenName": "airtable-xml-to-sql-server-upsert",
+        "InputDescriptionMD": "-p only-static-table=true\r\n   to only include entities marked as IsStaticData",
+        "InputFileTypeId": "8c1bfcc6-a4de-4604-b785-9aa677c5302a",
+        "OutputFileTypeId": "1136a8fc-7ced-47c2-b08d-1ff447a82b01",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "928d5e06-9cc1-4ad4-ab67-5998a63bf68e",
+            "TranspilerId": "1cbd15d4-18df-47a8-8a08-83d9544baa11",
+            "Name": "v1",
+            "CreatedOn": "2018-04-12T21:36:07.233",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "ade52a26-bdfb-4be8-9bd7-5fa202961adf",
+      "Name": "AirtableXmlToSqlServerUpsert",
+      "RelativePath": "/sql",
+      "CommandLine": "airtable/airtable-xml-to-sql-server-upsert -i ../ssot/Airtable.xml -i ../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "91081c58-9a04-4646-8ffb-d5ca789916d2",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToCSharpSqlDataManager",
+        "DisplayName": "Odxml To C Sharp Sql Data Manager",
+        "Description": "Odxml To CSharp Sql Data Manager",
+        "CreatedOn": "2017-09-27T19:08:25.863",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-ClFrnG6AMwloJkLnUQ2d3Q",
+        "LowerName": "odxmltocsharpsqldatamanager",
+        "UpperName": "ODXMLTOCSHARPSQLDATAMANAGER",
+        "LowerHyphenName": "odxml-to-c-sharp-sql-data-manager",
+        "ReadMeMD": "Creates a Data Access Layerfor (DAL) SqlServer in CSharp which can natively read, write and update the file.",
+        "InputDescriptionMD": " - base-namespace (string)\r\n    default: 'KP.ODXML7.SqlDataManager'\r\n\r\n - project-nam (string)\r\n    default: 'DAL'\r\n\r\n - schema-name (string)\r\n    default: 'dbo'\r\n\r\nNo Default Values:\r\n\r\n - data-namespace (string)\r\n - extensions-namespace (string)\r\n - suffix (string)\r\n",
+        "OutputDescriptionMD": "Otuputs a CSharp library which can read/write/udpate the objects described by the input odxml file",
+        "InputFileTypeId": "33de424c-cfe0-498e-ae70-44da375a8fb2",
+        "OutputFileTypeId": "47f5fc9f-0c22-4f73-8d18-0544a7f05d7b",
+        "Category": "dot-net",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "74255a51-7a73-4865-aa6f-e380bc22f50c",
+            "TranspilerId": "91081c58-9a04-4646-8ffb-d5ca789916d2",
+            "Name": "v1",
+            "CreatedOn": "2017-09-27T19:08:26.973",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "0a2e4bc2-8806-431f-83d2-66ca9d0b822f",
+      "Name": "OdxmlToCSharpSqlDataManager",
+      "RelativePath": "/ConsoleApp1/DAL",
+      "CommandLine": "odxml42/odxml-to-csharp-sql-datamanager -i ../../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "947b8093-d33d-4fbf-9d3e-d3910a9e8658",
+        "AccountHolderId": "9aeb4f89-3c90-4972-927c-7deebfbb9de4",
+        "Name": "OdxmlToGolangStructs",
+        "DisplayName": "Odxml To Golang Structs",
+        "Description": "Odxml To Go Lang Structs",
+        "CreatedOn": "2018-04-26T19:10:47.18",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-qP39i9eYW8fvSubncl3OEA",
+        "LowerName": "odxmltogolangstructs",
+        "UpperName": "ODXMLTOGOLANGSTRUCTS",
+        "LowerHyphenName": "odxml-to-golang-structs",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "2fb126d3-a134-435a-9097-6acdd21e5a9f",
+            "TranspilerId": "947b8093-d33d-4fbf-9d3e-d3910a9e8658",
+            "Name": "v1",
+            "CreatedOn": "2018-04-26T19:11:52.833",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "4b6a8b7b-5448-42ad-9c29-64c150bacaa9",
+      "Name": "OdxmlToGolangStructs",
+      "RelativePath": "/golang",
+      "CommandLine": "odxml42/odxml-to-golang-structs -i ../ODXML/DataSchema.odxml"
     }
   ]
 }

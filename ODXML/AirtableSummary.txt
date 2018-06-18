@@ -1,0 +1,46 @@
+
+Entities for helloworld:
+
+ - Galaxy 
+ - Astronomer 
+ - Star 
+
+ System Entities  (NOT included in ODXML):
+
+ - Entity 
+
+ IDS:
+
+-recD1iNSXEea4TIxi/Entities
+
+-recWdXU0TsXSCWV4i/Entities
+
+-recfJPRymyjtYLjhZ/Entities
+
+-recrnwzQfiAhuTClP/Entities
+
+-recH4wXkMEd5S4pUf/Galaxies
+
+-reco5yAJlcUMSsWyf/Galaxies
+
+-recxdClgul2sqgv4i/Galaxies
+
+-rec9gnOWBVCMa3zwB/Astronomers
+
+-reccqYz7vYutdrXWQ/Astronomers
+
+-recuwCgXwqQFaLgym/Astronomers
+
+-rec4OZu12JfXa8NhZ/Stars
+
+-rec99vLonTpbG6fZS/Stars
+
+-recgMrUvkZ0XAlHax/Stars
+
+-reckXigFuEaoPr8k8/Stars
+
+-recutl0fSpATFivMb/Stars
+
+-recxrcWyXxL6KA83R/Stars
+
+

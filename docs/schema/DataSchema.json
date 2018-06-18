@@ -1,0 +1,283 @@
+
+{
+  "Ontology": {
+    "OntologyGroups": {
+      "OntologyGroup": {
+        "Name": "helloworld",
+        "ObjectDefs": {
+          "ObjectDef": [
+            {
+              "EntityId": "recD1iNSXEea4TIxi",
+              "createdTime": "2018-05-15T16:23:15Z",
+              "PluralName": "Galaxies",
+              "Name": "Galaxy",
+              "DisplayName": "Galaxy",
+              "AirtableName": "Galaxies",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "IsPrimaryKey": "1",
+                    "Name": "GalaxyId",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "17",
+                    "Text": "100",
+                    "IsAttribute": "0",
+                    "IsCollection": "0",
+                    "IsNullable": "0"
+                  },
+                  {
+                    "Name": "createdTime",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "DATETIME",
+                    "Length": "",
+                    "MaxLength": "20",
+                    "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "FirstSeen",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "SHORT",
+                    "Length": "",
+                    "MaxLength": "4",
+                    "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Name",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "16",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "HaveVisited",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "BOOLEAN",
+                    "Length": "",
+                    "MaxLength": "4",
+                    "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Notes",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "15",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  }
+                ],
+                "COLLECTION": {
+                  "Name": "Stars",
+                  "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                  "DataType": "TEXT",
+                  "Length": "150",
+                  "MaxLength": "17",
+                  "Text": "100",
+                  "IsNullable": "1",
+                  "IsPrimaryKey": "0",
+                  "IsAttribute": "0",
+                  "IsCollection": "1"
+                }
+              }
+            },
+            {
+              "EntityId": "recWdXU0TsXSCWV4i",
+              "createdTime": "2018-06-18T00:49:16Z",
+              "PluralName": "Astronomers",
+              "Name": "Astronomer",
+              "DisplayName": "Astronomer",
+              "AirtableName": "Astronomers",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "IsPrimaryKey": "1",
+                    "Name": "AstronomerId",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "17",
+                    "Text": "100",
+                    "IsAttribute": "0",
+                    "IsCollection": "0",
+                    "IsNullable": "0"
+                  },
+                  {
+                    "Name": "createdTime",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "DATETIME",
+                    "Length": "",
+                    "MaxLength": "20",
+                    "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Name",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "16",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  }
+                ],
+                "COLLECTION": {
+                  "Name": "Stars",
+                  "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                  "DataType": "TEXT",
+                  "Length": "150",
+                  "MaxLength": "17",
+                  "Text": "100",
+                  "IsNullable": "1",
+                  "IsPrimaryKey": "0",
+                  "IsAttribute": "0",
+                  "IsCollection": "1"
+                }
+              }
+            },
+            {
+              "EntityId": "recfJPRymyjtYLjhZ",
+              "createdTime": "2018-05-15T16:23:15Z",
+              "PluralName": "Stars",
+              "Name": "Star",
+              "DisplayName": "Star",
+              "AirtableName": "Stars",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "IsPrimaryKey": "1",
+                    "Name": "StarId",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "17",
+                    "Text": "100",
+                    "IsAttribute": "0",
+                    "IsCollection": "0",
+                    "IsNullable": "0"
+                  },
+                  {
+                    "Name": "createdTime",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "DATETIME",
+                    "Length": "",
+                    "MaxLength": "20",
+                    "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "FoundBy",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "17",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0",
+                    "Relationships": {
+                      "Relationship": {
+                        "AirtableName": "Astronomer",
+                        "MatchingEntitiesFound": "1",
+                        "ReferencedObjectDef": "Astronomer",
+                        "ReferencedPropertyDef": "AstronomerId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "NasaID",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "7",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Galaxy",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "17",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0",
+                    "Relationships": {
+                      "Relationship": {
+                        "AirtableName": "Galaxy",
+                        "MatchingEntitiesFound": "1",
+                        "ReferencedObjectDef": "Galaxy",
+                        "ReferencedPropertyDef": "GalaxyId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "Name",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "16",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Notes",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "15",
+                    "Text": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+                    
