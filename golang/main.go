@@ -3,14 +3,16 @@ package main
 import (
 	"fmt"
 
+	"github.com/eejai42/helloworld/config"
 	"github.com/eejai42/helloworld/golang/smq"
 )
 
 func main() {
+	conf := config.Init()
 
 	programmer := new(smq.Programmer)
 
-	programmer.Init("amqp://guest:guest@localhost/SMQ")
+	programmer.Init(conf.URI)
 
 	programmer.HelloStr("What's up world?", func(actor *smq.ActorBase, reply *smq.Payload) *smq.Payload {
 

@@ -4,3 +4,4 @@
 **/packages
 debug
 **/.vs
+config/config.json
