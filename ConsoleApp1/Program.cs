@@ -1,4 +1,6 @@
-﻿using SMQ.SassyMQ.Lib.RabbitMQ;
+﻿using helloworld.Lib.DataClasses;
+using helloworld.Lib.SqlDataManagement;
+using SMQ.SassyMQ.Lib.RabbitMQ;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,14 @@ namespace ConsoleApp1
             world.ProgrammerHelloReceived += World_ProgrammerHelloReceived;
 
             world.ProgrammerGoodbyeReceived += World_ProgrammerGoodbyeReceived;
+
+            world.ProgrammerGetAllGalaxiesReceived += World_ProgrammerGetAllGalaxiesReceived;
+        }
+
+        private static void World_ProgrammerGetAllGalaxiesReceived(object sender, PayloadEventArgs e)
+        {
+            var sdm = new SqlDataManager("data source=.;Initial Catalog=helloworld; Integrated Security=SSPI");
+            e.Payload.Galaxies = sdm.GetAllGalaxies<Galaxy>();
         }
 
         private static void World_ProgrammerGoodbyeReceived(object sender, PayloadEventArgs e)

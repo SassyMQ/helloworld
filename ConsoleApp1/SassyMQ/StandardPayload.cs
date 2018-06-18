@@ -1,6 +1,8 @@
+using helloworld.Lib.DataClasses;
 using Newtonsoft.Json;
 using RabbitMQ.Client.Events;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -29,5 +31,7 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
             : this(actor, content, true)
         {
         }
+
+        public List<Galaxy> Galaxies { get; set; }
     }
 }

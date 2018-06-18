@@ -24,5 +24,16 @@ func main() {
 		return reply
 	})
 
+	programmer.GetAllGalaxies(programmer.CreatePayload(), func(actor *smq.ActorBase, reply *smq.Payload) *smq.Payload {
+
+		fmt.Println("Got a reply from the world after goodbye")
+
+		for index := range reply.Galaxies {
+			galaxy := reply.Galaxies[index]
+			fmt.Println("GALAXY: ", galaxy.Name)
+		}
+		return reply
+	})
+
 	select {}
 }
