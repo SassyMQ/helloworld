@@ -1,0 +1,6 @@
+**/.ssotme/
+**/obj
+**/bin
+**/packages
+debug
+**/.vs

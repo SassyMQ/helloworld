@@ -14,7 +14,7 @@ func main() {
 
 	programmer.HelloStr("What's up world?", func(actor *smq.ActorBase, reply *smq.Payload) *smq.Payload {
 
-		fmt.Println("Got a hello from a programmer")
+		fmt.Println("Got a reply from the world")
 		return reply
 	})
 

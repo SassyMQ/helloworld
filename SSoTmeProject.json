@@ -125,6 +125,81 @@
       "Name": "SmqlToGolangRabbitMQ",
       "RelativePath": "/golang",
       "CommandLine": "sassymq/smql-to-golang -i ../ssot/Lexicon.smql"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "9b86e4ae-d540-4766-8ad6-fb3893290a4f",
+        "Name": "SmqlToRabbitMQConfig",
+        "DisplayName": "Smql To Rabbit M Q Config",
+        "Description": "Creates a script which will configure rabbit with the correct Exchanges, Queues, Routes, etc, given an Smql file.",
+        "CreatedOn": "2017-09-18T14:24:34.077",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-WxioEA3FsR1naAP64GFeiQ",
+        "LowerName": "smqltorabbitmqconfig",
+        "UpperName": "SMQLTORABBITMQCONFIG",
+        "LowerHyphenName": "smql-to-rabbit-m-q-config",
+        "InputFileTypeId": "87c1c579-ea4f-47db-a064-f26f9ca1d91e",
+        "OutputFileTypeId": "c131c623-c204-4f34-b98f-d326bba5042a",
+        "Category": "rabbitmq",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "e9603743-148c-43b9-82ba-761a32de6045",
+            "TranspilerId": "9b86e4ae-d540-4766-8ad6-fb3893290a4f",
+            "Name": "v1",
+            "CreatedOn": "2017-09-18T14:25:11.687",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "8e80ac6f-41b4-4dfd-b1cd-c6743a5eb766",
+      "Name": "SmqlToRabbitMQConfig",
+      "RelativePath": "/config",
+      "CommandLine": "sassymq/smql-to-rabbitmq-config -i ../ssot/Lexicon.smql"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "cf9074b7-4448-474a-adb6-cfffc0911e6c",
+        "Name": "SmqlToCSharpRabbitMQ",
+        "DisplayName": "Smql To C Sharp Rabbit M Q",
+        "Description": "Smql To CSharp RabbitMQ",
+        "CreatedOn": "2017-09-15T22:13:19.003",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-0dlmenmzFCebAz5mrtILxw",
+        "LowerName": "smqltocsharprabbitmq",
+        "UpperName": "SMQLTOCSHARPRABBITMQ",
+        "LowerHyphenName": "smql-to-c-sharp-rabbit-m-q",
+        "ReadMeMD": "Parameters:\r\n - acronym = \"/SMQLexicon/Acronym\" \r\n - payload-type = concat($acronym, 'Payload')\r\n - actor-base-type = concat($acronym, 'ActorBase')\r\n",
+        "InputFileTypeId": "87c1c579-ea4f-47db-a064-f26f9ca1d91e",
+        "OutputFileTypeId": "47f5fc9f-0c22-4f73-8d18-0544a7f05d7b",
+        "Category": "rabbitmq",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "b189ce7b-4086-4575-b89d-aafcbe02bba9",
+            "TranspilerId": "cf9074b7-4448-474a-adb6-cfffc0911e6c",
+            "Name": "v1",
+            "CreatedOn": "2017-09-15T22:13:25.117",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "9b087dd8-a640-47b6-a635-61169f7ee5b3",
+      "Name": "SmqlToCSharpRabbitMQ",
+      "RelativePath": "/ConsoleApp1/SassyMQ",
+      "CommandLine": "sassymq/smql-to-csharp-rabbitmq -i ../../ssot/Lexicon.smql -p legacy=false"
     }
   ]
 }
