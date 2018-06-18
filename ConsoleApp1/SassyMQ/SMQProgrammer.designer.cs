@@ -100,6 +100,30 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
         {
             return this.SendMessage("world.general.programmer.goodbye", payload, replyHandler, timeoutHandler, waitTimeout);
         }
+        /// <summary>
+        /// GetAllGalaxies - 
+        /// </summary>
+        public Task GetAllGalaxies(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetAllGalaxies(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }    
+
+        /// <summary>
+        /// GetAllGalaxies - 
+        /// </summary>
+        public Task GetAllGalaxies(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetAllGalaxies(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetAllGalaxies - 
+        /// </summary>
+        public Task GetAllGalaxies(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("world.general.programmer.getallgalaxies", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
     }
 }
 

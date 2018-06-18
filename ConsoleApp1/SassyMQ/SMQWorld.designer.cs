@@ -31,6 +31,10 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
                         this.OnProgrammerGoodbyeReceived(payload, bdea);
                         break;
                     
+                    case "world.general.programmer.getallgalaxies":
+                        this.OnProgrammerGetAllGalaxiesReceived(payload, bdea);
+                        break;
+                    
                 }
 
             }
@@ -67,6 +71,20 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.ProgrammerGoodbyeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetAllGalaxies from Programmer
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> ProgrammerGetAllGalaxiesReceived;
+        protected virtual void OnProgrammerGetAllGalaxiesReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.ProgrammerGetAllGalaxiesReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.ProgrammerGetAllGalaxiesReceived(this, plea);
             }
         }
 

@@ -43,5 +43,9 @@ func (p *World) AddProgrammerGoodbyeHandler(value interface{}) error {
 	err := p.AddHandler("world.general.programmer.goodbye", value)
 	return err
 }
+func (p *World) AddProgrammerGetAllGalaxiesHandler(value interface{}) error {
+	err := p.AddHandler("world.general.programmer.getallgalaxies", value)
+	return err
+}
 
     

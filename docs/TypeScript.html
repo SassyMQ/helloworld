@@ -39,6 +39,15 @@ export class Home {
             // Do something here with <b>reply.body.</b>
          });
         
+        
+         // Say "Get All Galaxies" to World
+         // 
+         var payload = this.programmer.createPayload();
+         payload. = {...};
+         this.programmer.GetAllGalaxies(payload, (reply) {
+            // Do something here with <b>reply.body.</b>
+         });
+        
 
         
          <b>// Listen for messages</b>
@@ -92,6 +101,13 @@ export class Home {
          // Hear Goodbye from Programmer
          // Say byby
          this.world.onGoodbye((message) {
+            // Do something here with <b>message.body.</b>
+         });
+        
+        
+         // Hear Get All Galaxies from Programmer
+         // 
+         this.world.onGetAllGalaxies((message) {
             // Do something here with <b>message.body.</b>
          });
         
