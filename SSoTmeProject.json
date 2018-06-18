@@ -503,6 +503,165 @@
       "Name": "OdxmlToGolangStructs",
       "RelativePath": "/golang",
       "CommandLine": "odxml42/odxml-to-golang-structs -i ../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "db0a0411-314b-4504-a9d8-f4f423109c08",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "PublicGSheetToJson",
+        "DisplayName": "Public G Sheet To Json",
+        "Description": "Converts a publicly shared GSheet link into a single, Json file.",
+        "CreatedOn": "2017-11-02T17:02:33.813",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-jWBa32Jd3OAy32tcP7I0iA",
+        "LowerName": "publicgsheettojson",
+        "UpperName": "PUBLICGSHEETTOJSON",
+        "LowerHyphenName": "public-g-sheet-to-json",
+        "ReadMeMD": "This is actually the result of first exporting the GSheet as an Xlsx file, and then calling the Xlsx-To-Json tool to convert that into json.",
+        "InputFileTypeId": "3c31d7c2-5c85-434b-a5a0-a5bd1dbc0a96",
+        "OutputFileTypeId": "e827499f-f215-4b35-8dae-6bd423a75e4c",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "f91da934-2b48-4a47-ba09-944bc27df974",
+            "TranspilerId": "db0a0411-314b-4504-a9d8-f4f423109c08",
+            "Name": "v1",
+            "CreatedOn": "2017-11-02T17:02:46.967",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "c117bd5e-dcf4-4d43-88d2-a3cf5e6f04e7",
+      "Name": "PublicGSheetToJson",
+      "RelativePath": "/ssot",
+      "CommandLine": "public-gsheet-to-json https://docs.google.com/spreadsheets/d/1qHcmWH3xN98wGA5o3G1oyLqY3R70dd4TCOYKf3YYMeo/edit#gid=518630714"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "d4c9b6b7-e40b-44d6-9550-86ef55cd9623",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "UrlToFile",
+        "DisplayName": "Url To File",
+        "Description": "Similar to curl, this command will perform a web request and return the resulting html as a filename",
+        "CreatedOn": "2017-06-01T19:43:25.853",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-9Seraqo9GN5ve9b1i2W8bg",
+        "LowerName": "urltofile",
+        "UpperName": "URLTOFILE",
+        "LowerHyphenName": "url-to-file",
+        "ReadMeMD": "This is helpful for pulling any resource from the internet into a local SSoTme build process.",
+        "InputDescriptionMD": "A url to an online resources.  At the moment this needs to be a \"public\" resource - but down the road, there is no reason this tool can't be improved to handle many different resources types (simple auth, google, facebook, api, dropbox, etc).",
+        "OutputDescriptionMD": "A local file (or potentially file-set) - downloaded from the URL provided.",
+        "ExampleMD": "ssotme url-to-file https://my-domain.com/some-data.abc",
+        "InputFileTypeId": "c24610e6-488d-4093-a318-c9fcf855cb56",
+        "OutputFileTypeId": "952e47eb-3448-4627-8dc4-93dab494c957",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "e9d09212-477a-4921-bd50-a06bb0531b4e",
+            "TranspilerId": "d4c9b6b7-e40b-44d6-9550-86ef55cd9623",
+            "Name": "v1",
+            "CreatedOn": "2017-06-01T19:43:32.353",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "aba0419e-1272-4b0e-bfca-0586da437f40",
+      "Name": "UrlToFile",
+      "RelativePath": "/ssot",
+      "CommandLine": "url-to-file https://docs.google.com/spreadsheets/d/1qHcmWH3xN98wGA5o3G1oyLqY3R70dd4TCOYKf3YYMeo/export?format=xlsx binary -o HelloWorld.Xlsx"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "c49c2224-82c9-404f-bb8e-51c482d97db5",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "XlsxToXml",
+        "DisplayName": "Xlsx To Xml",
+        "Description": "Converts an Xlsx file into a single Xml file.",
+        "CreatedOn": "2017-10-06T16:52:05.873",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-pwRUdyqwEq8fPN8gkK7ADg",
+        "LowerName": "xlsxtoxml",
+        "UpperName": "XLSXTOXML",
+        "LowerHyphenName": "xlsx-to-xml",
+        "ReadMeMD": "First - the Xlsx file is passed to the Xlsx-to-csv converter.  This creates N CSV Files.  Each of these CSV files is passed to the Csv-To-Xml tool, which creates an xml file from the CSV, where the element names in the Xml are inferred from the names of the columns in the CSV data.\r\n\r\nOnce the Xml files have been produced, they are concatenated together into a single, Xml file that has ever value from the Xlsx file, but now in a \"queriable\" format.",
+        "InputFileTypeId": "39d3bcd1-d89f-4361-a3f7-7d5c295132cd",
+        "OutputFileTypeId": "f1b92a2a-3f83-4000-9b37-57f920e14419",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "79286eb3-21ed-4047-b2c9-bcfcfee794a9",
+            "TranspilerId": "c49c2224-82c9-404f-bb8e-51c482d97db5",
+            "Name": "v1",
+            "CreatedOn": "2017-10-06T16:52:11.62",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "cd18cdaf-e750-49a5-8715-288ab23fac5d",
+      "Name": "XlsxToXml",
+      "RelativePath": "/ssot",
+      "CommandLine": "xlsx-to-xml -i HelloWorld.Xlsx"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "42efdc17-820e-466a-ad70-8fb75d8359be",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "XlsxToJson",
+        "DisplayName": "Xlsx To Json",
+        "Description": "Converts an Xlsx file into a single Json file.",
+        "CreatedOn": "2017-10-06T16:52:09.16",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-bUHfUHscSdago6KiZK5Q9Q",
+        "LowerName": "xlsxtojson",
+        "UpperName": "XLSXTOJSON",
+        "LowerHyphenName": "xlsx-to-json",
+        "ReadMeMD": "This is actually the result of converting the Xml produced by the Xlsx-to-xml tool",
+        "InputFileTypeId": "39d3bcd1-d89f-4361-a3f7-7d5c295132cd",
+        "OutputFileTypeId": "e827499f-f215-4b35-8dae-6bd423a75e4c",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "b619245a-c244-44fe-af3d-d68ff4d28dd6",
+            "TranspilerId": "42efdc17-820e-466a-ad70-8fb75d8359be",
+            "Name": "v1",
+            "CreatedOn": "2017-10-06T16:52:11.62",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "edddb17f-7408-41f5-ad32-aae605a4106b",
+      "Name": "XlsxToJson",
+      "RelativePath": "/ssot",
+      "CommandLine": "xlsx-to-json -i HelloWorld.Xlsx"
     }
   ]
 }

@@ -1,0 +1,73 @@
+<HelloWorld><Lexicons>
+  <Lexicon>
+    <From>Programmer</From>
+    <Message>Hello</Message>
+    <To>World</To>
+    <Description>The Programmer, says "Hello" to the World</Description>
+  </Lexicon>
+  <Lexicon>
+    <From>World</From>
+    <Message>What's Up?</Message>
+    <To>Programmer</To>
+    <Description>The World, says "Wassup?" back to the Programmer</Description>
+  </Lexicon>
+  <Lexicon>
+    <From>Programmer</From>
+    <Message>Goodbye</Message>
+    <To>World</To>
+    <Description>Say byby</Description>
+  </Lexicon>
+  <Lexicon>
+    <From>Programmer</From>
+    <Message>GetAllGalaxies</Message>
+    <To>World</To>
+  </Lexicon>
+</Lexicons><Tests>
+  <Test>
+    <Actor>Programmer</Actor>
+    <RoutingKey>world.general.programmer.hello</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>Programmer</Actor>
+    <RoutingKey>programmer.general.world.wassup</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>Programmer</Actor>
+    <RoutingKey>world.general.programmer.goodbye</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>Programmer</Actor>
+    <RoutingKey>world.general.programmer.getallgalaxies</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>World</Actor>
+    <RoutingKey>world.general.programmer.hello</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>World</Actor>
+    <RoutingKey>programmer.general.world.wassup</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>World</Actor>
+    <RoutingKey>world.general.programmer.goodbye</RoutingKey>
+  </Test>
+  <Test>
+    <Actor>World</Actor>
+    <RoutingKey>world.general.programmer.getallgalaxies</RoutingKey>
+  </Test>
+</Tests><Actors>
+  <Actor>
+    <Actors>Programmer</Actors>
+    <Exchange>programmermic</Exchange>
+    <Queue>programmer.all</Queue>
+    <Username>programmer</Username>
+    <Password>programmer</Password>
+  </Actor>
+  <Actor>
+    <Actors>World</Actors>
+    <Exchange>worldmic</Exchange>
+    <Queue>world.all</Queue>
+    <Username>world</Username>
+    <Password>world</Password>
+  </Actor>
+</Actors></HelloWorld>

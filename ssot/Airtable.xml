@@ -141,10 +141,10 @@ fdsa
       <FoundBy>recuwCgXwqQFaLgym</FoundBy>
       <NasaID>BAC1235</NasaID>
       <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
+      <LightYearsFromEarth>0</LightYearsFromEarth>
       <Name>Earths Sun</Name>
       <Notes>fdfdsfdsf
 </Notes>
-      <LightYearsFromEarth>0</LightYearsFromEarth>
     </Star>
     <Star>
       <StarId>rec99vLonTpbG6fZS</StarId>
@@ -152,10 +152,10 @@ fdsa
       <FoundBy>rec9gnOWBVCMa3zwB</FoundBy>
       <NasaID>DXY1553</NasaID>
       <Galaxy>reco5yAJlcUMSsWyf</Galaxy>
+      <LightYearsFromEarth>1000</LightYearsFromEarth>
       <Name>Alpha Centauri</Name>
       <Notes>dfdfd
 </Notes>
-      <LightYearsFromEarth>1000</LightYearsFromEarth>
     </Star>
     <Star>
       <StarId>recgMrUvkZ0XAlHax</StarId>
@@ -167,9 +167,9 @@ fdsa
       <createdTime>2018-05-15T16:19:47Z</createdTime>
       <FoundBy>recuwCgXwqQFaLgym</FoundBy>
       <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
+      <LightYearsFromEarth>1258</LightYearsFromEarth>
       <Name>Some Other Star</Name>
       <Notes>fdfds</Notes>
-      <LightYearsFromEarth>1258</LightYearsFromEarth>
     </Star>
     <Star>
       <StarId>recutl0fSpATFivMb</StarId>
