@@ -103,6 +103,9 @@ GO
           [Notes] NVARCHAR(150) NULL
           -- TEXT.
         ,
+          [LightYearsFromEarth] INT NULL
+          -- SHORT.
+        ,
         
         CONSTRAINT [PK_Star] PRIMARY KEY CLUSTERED
           (
@@ -258,14 +261,14 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'StarId' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [StarId] NVARCHAR(150) NULL;
     END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'createdTime' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [createdTime] DATETIME NULL;
@@ -283,7 +286,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'FoundBy' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [FoundBy] NVARCHAR(150) NULL;
@@ -301,7 +304,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'NasaID' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [NasaID] NVARCHAR(150) NULL;
@@ -319,7 +322,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Galaxy' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [Galaxy] NVARCHAR(150) NULL;
@@ -337,7 +340,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [Name] NVARCHAR(150) NULL;
@@ -355,7 +358,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 8
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Notes' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [Notes] NVARCHAR(150) NULL;
@@ -367,6 +370,24 @@ DECLARE @ObjectName NVARCHAR(100)
 
 
         ALTER TABLE [dbo].[Star] ALTER COLUMN [Notes] NVARCHAR(150) NULL;
+
+    
+
+	END
+
+    
+    -- COUNT: 8
+    IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'LightYearsFromEarth' AND Object_ID = Object_ID(N'Star'))
+    BEGIN
+            ALTER TABLE [dbo].[Star] ADD [LightYearsFromEarth] INT NULL;
+    END
+
+    
+    ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Star] ALTER COLUMN [LightYearsFromEarth] INT NULL;
 
     
 

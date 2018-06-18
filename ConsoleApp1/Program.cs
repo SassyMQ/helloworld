@@ -27,6 +27,7 @@ namespace ConsoleApp1
         {
             var sdm = new SqlDataManager("data source=.;Initial Catalog=helloworld; Integrated Security=SSPI");
             e.Payload.Galaxies = sdm.GetAllGalaxies<Galaxy>();
+            e.Payload.Stars = sdm.GetAllStars<Star>();
         }
 
         private static void World_ProgrammerGoodbyeReceived(object sender, PayloadEventArgs e)

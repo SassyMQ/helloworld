@@ -33,5 +33,6 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
         }
 
         public List<Galaxy> Galaxies { get; set; }
+        public List<Star> Stars { get; set; }
     }
 }

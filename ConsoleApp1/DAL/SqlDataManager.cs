@@ -554,8 +554,8 @@ namespace helloworld.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Star] (  [StarId]  , [createdTime]  , [FoundBy]  , [NasaID]  , [Galaxy]  , [Name]  , [Notes])
-                                    VALUES (@StarId, @createdTime, @FoundBy, @NasaID, @Galaxy, @Name, @Notes)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Star] (  [StarId]  , [createdTime]  , [FoundBy]  , [NasaID]  , [Galaxy]  , [Name]  , [Notes]  , [LightYearsFromEarth])
+                                    VALUES (@StarId, @createdTime, @FoundBy, @NasaID, @Galaxy, @Name, @Notes, @LightYearsFromEarth)", this.Schema);
 
                 
                 if (ReferenceEquals(star.StarId, null)) cmd.Parameters.AddWithValue("@StarId", DBNull.Value);
@@ -586,6 +586,10 @@ namespace helloworld.Lib.SqlDataManagement
                 if (ReferenceEquals(star.Notes, null)) cmd.Parameters.AddWithValue("@Notes", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Notes", star.Notes);
+                
+                if (ReferenceEquals(star.LightYearsFromEarth, null)) cmd.Parameters.AddWithValue("@LightYearsFromEarth", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@LightYearsFromEarth", star.LightYearsFromEarth);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -709,6 +713,13 @@ namespace helloworld.Lib.SqlDataManagement
                           star.Notes = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("LightYearsFromEarth"); // false
+                      if (!reader.IsDBNull(propertyIndex)) //SHORT
+                      {
+                          
+                          star.LightYearsFromEarth = reader.GetInt32(propertyIndex);
+                      }
+                   
                     results.Add(star);
                 }
 
@@ -732,7 +743,7 @@ namespace helloworld.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Star] SET 
-                                    [createdTime] = @createdTime, [FoundBy] = @FoundBy, [NasaID] = @NasaID, [Galaxy] = @Galaxy, [Name] = @Name, [Notes] = @Notes
+                                    [createdTime] = @createdTime, [FoundBy] = @FoundBy, [NasaID] = @NasaID, [Galaxy] = @Galaxy, [Name] = @Name, [Notes] = @Notes, [LightYearsFromEarth] = @LightYearsFromEarth
                                     WHERE  [StarId] = @StarId", this.Schema);
 
                 
@@ -771,6 +782,11 @@ namespace helloworld.Lib.SqlDataManagement
                 if (ReferenceEquals(star.Notes, null)) cmd.Parameters.AddWithValue("@Notes", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Notes", star.Notes);
+                
+                
+                if (ReferenceEquals(star.LightYearsFromEarth, null)) cmd.Parameters.AddWithValue("@LightYearsFromEarth", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@LightYearsFromEarth", star.LightYearsFromEarth);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();

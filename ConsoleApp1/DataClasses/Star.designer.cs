@@ -46,6 +46,9 @@ namespace helloworld.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Notes")]
         public String Notes { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "LightYearsFromEarth")]
+        public Nullable<Int32> LightYearsFromEarth { get; set; }
+    
 
         
 

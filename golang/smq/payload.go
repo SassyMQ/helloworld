@@ -1,6 +1,9 @@
 package smq
 
-import "github.com/eejai42/helloworld/golang/galaxy"
+import (
+	"github.com/eejai42/helloworld/golang/galaxy"
+	"github.com/eejai42/helloworld/golang/star"
+)
 
 type Payload struct {
 	PayloadId    string
@@ -10,4 +13,5 @@ type Payload struct {
 	ReplyContent string
 	ErrorMessage string
 	Galaxies     []galaxy.Galaxy
+	Stars        []star.Star
 }

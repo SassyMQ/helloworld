@@ -13,6 +13,7 @@ type Star struct {
     Galaxy string
     Name string
     Notes string
+    LightYearsFromEarth int
 }
 
 func (s Star) ToString() {  

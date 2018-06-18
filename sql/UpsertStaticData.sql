@@ -194,7 +194,7 @@ fdsa
                     -- INSERT VALUES
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'rec4OZu12JfXa8NhZ')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'rec4OZu12JfXa8NhZ', 
                         
@@ -205,7 +205,9 @@ fdsa
                                 'Earths Sun', 
                         
                                 'fdfdsfdsf
-');
+', 
+                        
+                                '0');
                     END ELSE BEGIN
                         UPDATE  [Star] 
                             SET 
@@ -213,7 +215,8 @@ fdsa
                                 [NasaID] = 'BAC1235', 
                                 [Name] = 'Earths Sun', 
                                 [Notes] = 'fdfdsfdsf
-'
+', 
+                                [LightYearsFromEarth] = '0'
                         WHERE StarId = 'rec4OZu12JfXa8NhZ';
                     END
                 
@@ -221,7 +224,7 @@ fdsa
                     -- INSERT VALUES
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'rec99vLonTpbG6fZS')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'rec99vLonTpbG6fZS', 
                         
@@ -232,7 +235,9 @@ fdsa
                                 'Alpha Centauri', 
                         
                                 'dfdfd
-');
+', 
+                        
+                                '1000');
                     END ELSE BEGIN
                         UPDATE  [Star] 
                             SET 
@@ -240,7 +245,8 @@ fdsa
                                 [NasaID] = 'DXY1553', 
                                 [Name] = 'Alpha Centauri', 
                                 [Notes] = 'dfdfd
-'
+', 
+                                [LightYearsFromEarth] = '1000'
                         WHERE StarId = 'rec99vLonTpbG6fZS';
                     END
                 
@@ -248,7 +254,7 @@ fdsa
                     -- INSERT VALUES
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'recgMrUvkZ0XAlHax')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'recgMrUvkZ0XAlHax', 
                         
@@ -258,6 +264,8 @@ fdsa
                         
                                 'Star 5', 
                         
+                                NULL, 
+                        
                                 NULL);
                     END ELSE BEGIN
                         UPDATE  [Star] 
@@ -265,7 +273,8 @@ fdsa
                                 [createdTime] = '2018-05-25T22:27:07Z', 
                                 [NasaID] = NULL, 
                                 [Name] = 'Star 5', 
-                                [Notes] = NULL
+                                [Notes] = NULL, 
+                                [LightYearsFromEarth] = NULL
                         WHERE StarId = 'recgMrUvkZ0XAlHax';
                     END
                 
@@ -273,7 +282,7 @@ fdsa
                     -- INSERT VALUES
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'reckXigFuEaoPr8k8')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'reckXigFuEaoPr8k8', 
                         
@@ -283,14 +292,17 @@ fdsa
                         
                                 'Some Other Star', 
                         
-                                'fdfds');
+                                'fdfds', 
+                        
+                                '1258');
                     END ELSE BEGIN
                         UPDATE  [Star] 
                             SET 
                                 [createdTime] = '2018-05-15T16:19:47Z', 
                                 [NasaID] = NULL, 
                                 [Name] = 'Some Other Star', 
-                                [Notes] = 'fdfds'
+                                [Notes] = 'fdfds', 
+                                [LightYearsFromEarth] = '1258'
                         WHERE StarId = 'reckXigFuEaoPr8k8';
                     END
                 
@@ -298,7 +310,7 @@ fdsa
                     -- INSERT VALUES
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'recutl0fSpATFivMb')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'recutl0fSpATFivMb', 
                         
@@ -308,6 +320,8 @@ fdsa
                         
                                 'Some Other Galax', 
                         
+                                NULL, 
+                        
                                 NULL);
                     END ELSE BEGIN
                         UPDATE  [Star] 
@@ -315,7 +329,8 @@ fdsa
                                 [createdTime] = '2018-05-25T22:27:04Z', 
                                 [NasaID] = NULL, 
                                 [Name] = 'Some Other Galax', 
-                                [Notes] = NULL
+                                [Notes] = NULL, 
+                                [LightYearsFromEarth] = NULL
                         WHERE StarId = 'recutl0fSpATFivMb';
                     END
                 
@@ -323,7 +338,7 @@ fdsa
                     -- INSERT VALUES
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'recxrcWyXxL6KA83R')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [NasaID] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'recxrcWyXxL6KA83R', 
                         
@@ -333,6 +348,8 @@ fdsa
                         
                                 'Another galaxy', 
                         
+                                NULL, 
+                        
                                 NULL);
                     END ELSE BEGIN
                         UPDATE  [Star] 
@@ -340,7 +357,8 @@ fdsa
                                 [createdTime] = '2018-05-25T22:27:07Z', 
                                 [NasaID] = NULL, 
                                 [Name] = 'Another galaxy', 
-                                [Notes] = NULL
+                                [Notes] = NULL, 
+                                [LightYearsFromEarth] = NULL
                         WHERE StarId = 'recxrcWyXxL6KA83R';
                     END
                 
@@ -535,7 +553,7 @@ fdsa
 
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'rec4OZu12JfXa8NhZ')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'rec4OZu12JfXa8NhZ', 
                         
@@ -550,7 +568,9 @@ fdsa
                                 'Earths Sun', 
                         
                                 'fdfdsfdsf
-');
+', 
+                        
+                                '0');
                     END ELSE BEGIN
                         UPDATE  [Star] 
                             SET 
@@ -560,14 +580,15 @@ fdsa
                                 [Galaxy] = 'recH4wXkMEd5S4pUf', 
                                 [Name] = 'Earths Sun', 
                                 [Notes] = 'fdfdsfdsf
-'
+', 
+                                [LightYearsFromEarth] = '0'
                         WHERE StarId = 'rec4OZu12JfXa8NhZ';
                     END
                 
 
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'rec99vLonTpbG6fZS')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'rec99vLonTpbG6fZS', 
                         
@@ -582,7 +603,9 @@ fdsa
                                 'Alpha Centauri', 
                         
                                 'dfdfd
-');
+', 
+                        
+                                '1000');
                     END ELSE BEGIN
                         UPDATE  [Star] 
                             SET 
@@ -592,14 +615,15 @@ fdsa
                                 [Galaxy] = 'reco5yAJlcUMSsWyf', 
                                 [Name] = 'Alpha Centauri', 
                                 [Notes] = 'dfdfd
-'
+', 
+                                [LightYearsFromEarth] = '1000'
                         WHERE StarId = 'rec99vLonTpbG6fZS';
                     END
                 
 
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'recgMrUvkZ0XAlHax')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'recgMrUvkZ0XAlHax', 
                         
@@ -613,6 +637,8 @@ fdsa
                         
                                 'Star 5', 
                         
+                                NULL, 
+                        
                                 NULL);
                     END ELSE BEGIN
                         UPDATE  [Star] 
@@ -622,14 +648,15 @@ fdsa
                                 [NasaID] = NULL, 
                                 [Galaxy] = NULL, 
                                 [Name] = 'Star 5', 
-                                [Notes] = NULL
+                                [Notes] = NULL, 
+                                [LightYearsFromEarth] = NULL
                         WHERE StarId = 'recgMrUvkZ0XAlHax';
                     END
                 
 
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'reckXigFuEaoPr8k8')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'reckXigFuEaoPr8k8', 
                         
@@ -643,7 +670,9 @@ fdsa
                         
                                 'Some Other Star', 
                         
-                                'fdfds');
+                                'fdfds', 
+                        
+                                '1258');
                     END ELSE BEGIN
                         UPDATE  [Star] 
                             SET 
@@ -652,14 +681,15 @@ fdsa
                                 [NasaID] = NULL, 
                                 [Galaxy] = 'recH4wXkMEd5S4pUf', 
                                 [Name] = 'Some Other Star', 
-                                [Notes] = 'fdfds'
+                                [Notes] = 'fdfds', 
+                                [LightYearsFromEarth] = '1258'
                         WHERE StarId = 'reckXigFuEaoPr8k8';
                     END
                 
 
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'recutl0fSpATFivMb')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'recutl0fSpATFivMb', 
                         
@@ -673,6 +703,8 @@ fdsa
                         
                                 'Some Other Galax', 
                         
+                                NULL, 
+                        
                                 NULL);
                     END ELSE BEGIN
                         UPDATE  [Star] 
@@ -682,14 +714,15 @@ fdsa
                                 [NasaID] = NULL, 
                                 [Galaxy] = 'recxdClgul2sqgv4i', 
                                 [Name] = 'Some Other Galax', 
-                                [Notes] = NULL
+                                [Notes] = NULL, 
+                                [LightYearsFromEarth] = NULL
                         WHERE StarId = 'recutl0fSpATFivMb';
                     END
                 
 
                     IF NOT EXISTS (SELECT StarId FROM Star WHERE StarId = 'recxrcWyXxL6KA83R')
                     BEGIN
-                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] ) VALUES (
+                        INSERT INTO [Star] ([StarId] , [createdTime] , [FoundBy] , [NasaID] , [Galaxy] , [Name] , [Notes] , [LightYearsFromEarth] ) VALUES (
                         
                                 'recxrcWyXxL6KA83R', 
                         
@@ -703,6 +736,8 @@ fdsa
                         
                                 'Another galaxy', 
                         
+                                NULL, 
+                        
                                 NULL);
                     END ELSE BEGIN
                         UPDATE  [Star] 
@@ -712,7 +747,8 @@ fdsa
                                 [NasaID] = NULL, 
                                 [Galaxy] = 'reco5yAJlcUMSsWyf', 
                                 [Name] = 'Another galaxy', 
-                                [Notes] = NULL
+                                [Notes] = NULL, 
+                                [LightYearsFromEarth] = NULL
                         WHERE StarId = 'recxrcWyXxL6KA83R';
                     END
                 

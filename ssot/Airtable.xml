@@ -144,6 +144,7 @@ fdsa
       <Name>Earths Sun</Name>
       <Notes>fdfdsfdsf
 </Notes>
+      <LightYearsFromEarth>0</LightYearsFromEarth>
     </Star>
     <Star>
       <StarId>rec99vLonTpbG6fZS</StarId>
@@ -154,6 +155,7 @@ fdsa
       <Name>Alpha Centauri</Name>
       <Notes>dfdfd
 </Notes>
+      <LightYearsFromEarth>1000</LightYearsFromEarth>
     </Star>
     <Star>
       <StarId>recgMrUvkZ0XAlHax</StarId>
@@ -167,6 +169,7 @@ fdsa
       <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
       <Name>Some Other Star</Name>
       <Notes>fdfds</Notes>
+      <LightYearsFromEarth>1258</LightYearsFromEarth>
     </Star>
     <Star>
       <StarId>recutl0fSpATFivMb</StarId>

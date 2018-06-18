@@ -270,6 +270,18 @@
                     "IsPrimaryKey": "0",
                     "IsAttribute": "0",
                     "IsCollection": "0"
+                  },
+                  {
+                    "Name": "LightYearsFromEarth",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "SHORT",
+                    "Length": "",
+                    "MaxLength": "4",
+                    "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
                   }
                 ]
               }
