@@ -312,10 +312,6 @@ func (actor *ActorBase) StartConsumption() (<-chan amqp.Delivery, error) {
 	return msgs, err
 }
 
-func (actor *ActorBase) SetListenQueue(queue amqp.Queue) {
-	actor.listener_queue = &queue
-}
-
 func (actor *ActorBase) GetQueueName() string {
 	return actor.queue
 }
