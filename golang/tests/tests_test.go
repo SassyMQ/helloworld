@@ -1,19 +1,19 @@
-package main
+package tests
 
 import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"testing"
 	"time"
 
 	"github.com/eejai42/helloworld/golang/smq"
-	"github.com/eejai42/helloworld/golang/tests/results"
 	"github.com/eejai42/sassymq-golang/errors"
 )
 
-func main() {
+func TestRouting(t *testing.T) {
 	// Where results will be stored
-	test_results := make([]results.ActorResults, 0)
+	test_results := make([]ActorResults, 0)
 
 	// Initiate actors
 	programmer := new(smq.Programmer)
@@ -48,12 +48,12 @@ func main() {
 	}
 
 	// Build report structure
-	actor_results := results.ActorResults{}
+	actor_results := ActorResults{}
 	actor_results.Actor = "Programmer"
 	actor_results.Recieved = programmer.GetFoundRoutingKeys()
 	test_results = append(test_results, actor_results)
 
-	actor_results = results.ActorResults{}
+	actor_results = ActorResults{}
 	actor_results.Actor = "World"
 	actor_results.Recieved = world.GetFoundRoutingKeys()
 	test_results = append(test_results, actor_results)

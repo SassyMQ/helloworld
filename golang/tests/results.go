@@ -1,4 +1,4 @@
-package results
+package tests
 
 type ActorResults struct {
 	Actor    string              `json:"actor"`
