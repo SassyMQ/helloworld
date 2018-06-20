@@ -4,3 +4,5 @@
 **/packages
 debug
 **/.vs
+config/config.json
+golang/tests/sassymq_report.json

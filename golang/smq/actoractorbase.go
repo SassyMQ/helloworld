@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-    "os"
-    "os/user"
+	"os"
+	"os/user"
 	"time"
 
 	"github.com/google/uuid"
@@ -13,23 +13,24 @@ import (
 )
 
 type ActorBase struct {
-    actor_name string
-	sender_id  uuid.UUID
-    sender_name    string
-	connection *amqp.Connection
-	channel    *amqp.Channel
+	actor_name     string
+	sender_id      uuid.UUID
+	sender_name    string
+	connection     *amqp.Connection
+	channel        *amqp.Channel
 	listener_queue *amqp.Queue
 	reply_queue    *amqp.Queue
-	handlers   map[string]interface{}
+	handlers       map[string]interface{}
 	reply_handlers map[string]interface{}
-	queue  string
-	exchange   string
-	connStr    string
+	queue          string
+	exchange       string
+	connStr        string
 	ActorBaseActions
 }
 
 type ActorBaseActions interface {
 	Init()
+	InitTest()
 	CreateListener()
 }
 
@@ -39,7 +40,7 @@ func (p *ActorBase) CreatePayload() *Payload {
 	DefaultWithPanic(err, "Failed to create uuid")
 	payload.PayloadId = pid.String()
 	payload.SenderId = p.sender_id.String()
-    payload.SenderName = p.sender_name
+	payload.SenderName = p.sender_name
 	return payload
 }
 
@@ -50,15 +51,15 @@ func (p *ActorBase) CloseAll() {
 	DefaultWithPanic(err, "Failed to close actorbase connection")
 }
 
-func (p *ActorBase) Init(actor string, connStr string) {
-    p.actor_name = actor
+func (p *ActorBase) InitBase(actor string, connStr string) {
+	p.actor_name = actor
 	p.connStr = connStr
 	p.queue = actor + ".all"
 	p.exchange = actor + "mic"
 	senderId, err := uuid.NewUUID()
 	DefaultWithPanic(err, "Failed to create sender id")
 	p.sender_id = senderId
-    
+
 	hostname, err := os.Hostname()
 	Default(err, "Failed to get hostname")
 
@@ -73,10 +74,15 @@ func (p *ActorBase) Init(actor string, connStr string) {
 	DefaultWithPanic(err, "Failed to initiate actorbase channel")
 	err = p.SetQos()
 	DefaultWithPanic(err, "Issue setting channel Qos")
+}
+
+func (p *ActorBase) Init(actor string, connStr string) {
+	p.InitBase(actor, connStr)
+
+	err := p.ResetHandlers()
+	DefaultWithPanic(err, "Failed to initiate handlers map")
 	err = p.CreateListener()
 	DefaultWithPanic(err, "Failed to initiate queue listener")
-	err = p.ResetHandlers()
-	DefaultWithPanic(err, "Failed to initiate handlers map")
 }
 
 func (p *ActorBase) SetConnection(address string) error {
@@ -97,26 +103,18 @@ func (p *ActorBase) SetChannel() error {
 
 func (p *ActorBase) SetQos() error {
 	err := p.channel.Qos(
-		1, // Prefetch count
-		0, // Prefetch size
+		1,     // Prefetch count
+		0,     // Prefetch size
 		false, // Global
 	)
 	return err
 }
 
 func (p *ActorBase) CreateListener() error {
-	q, err := p.channel.QueueDeclare(
-		p.queue, // Name
-		true,    // Durable
-		false,   // Delete when unused
-		false,   // Exclusive
-		false,   // No-wait
-		nil, // Arguments
-	)
+	err := p.DeclareListenerQueue()
 	if err == nil {
-		p.listener_queue = &q
 		go p.listenForever()
-		q, err = p.channel.QueueDeclare(
+		q, err := p.channel.QueueDeclare(
 			"",    // Name
 			true,  // Durable
 			false, // Delete when unused
@@ -134,15 +132,7 @@ func (p *ActorBase) CreateListener() error {
 }
 
 func (p *ActorBase) listenForever() {
-	msgs, err := p.channel.Consume(
-		p.listener_queue.Name, // Queue
-		"",    // Consumer
-		false, // Auto-ack
-		false, // Exclusive
-		false, // No-local
-		false, // No-wait
-		nil,   // Args
-	)
+	msgs, err := p.StartConsumption()
 	Default(err, "Failed to register a consumer")
 
 	go func() {
@@ -159,7 +149,7 @@ func (p *ActorBase) listenForever() {
 						amqp.Publishing{
 							DeliveryMode: amqp.Persistent,
 							ContentType:  "text/plain",
-							Body:     []byte(replyPayloadJson),
+							Body:         []byte(replyPayloadJson),
 						})
 				}
 			} else {
@@ -176,12 +166,12 @@ func (p *ActorBase) listenForever() {
 func (p *ActorBase) awaitRepliesForever() {
 	msgs, err := p.channel.Consume(
 		p.reply_queue.Name, // Queue
-		"",     // Consumer
-		false,      // Auto-ack
-		false,      // Exclusive
-		false,      // No-local
-		false,      // No-wait
-		nil,    // Args
+		"",                 // Consumer
+		false,              // Auto-ack
+		false,              // Exclusive
+		false,              // No-local
+		false,              // No-wait
+		nil,                // Args
 	)
 	Default(err, "Failed to start consuming reply queue")
 
@@ -210,7 +200,7 @@ func (p *ActorBase) awaitRepliesForever() {
 func (p *ActorBase) Publish(exchange string, key string, mandatory bool, immediate bool, publishing amqp.Publishing) error {
 	err := p.channel.Publish(
 		exchange,  // exchange
-		key,   // routing key
+		key,       // routing key
 		mandatory, // mandatory
 		immediate, // immediate
 		publishing)
@@ -219,12 +209,12 @@ func (p *ActorBase) Publish(exchange string, key string, mandatory bool, immedia
 
 func (p *ActorBase) QueueDeclare(name string, durable bool, should_delete bool, exclusive bool, no_wait bool, args amqp.Table) (amqp.Queue, error) {
 	q, err := p.channel.QueueDeclare(
-		name,  // Name
-		durable,   // Durable
+		name,          // Name
+		durable,       // Durable
 		should_delete, // Delete when unused
-		exclusive, // Exclusive
-		no_wait,   // No-wait
-		args,  // Arguments
+		exclusive,     // Exclusive
+		no_wait,       // No-wait
+		args,          // Arguments
 	)
 	return q, err
 }
@@ -255,14 +245,14 @@ func (p *ActorBase) SendPayload(routingKey string, payload *Payload, replyHandle
 	err = p.channel.Publish(
 		p.exchange, // exchange
 		routingKey, // routing key
-		false,  // mandatory
-		false,  // immediate
+		false,      // mandatory
+		false,      // immediate
 		amqp.Publishing{
 			DeliveryMode:  amqp.Persistent,
 			ContentType:   "text/plain",
 			CorrelationId: payload.PayloadId,
-			ReplyTo:   p.reply_queue.Name,
-			Body:  []byte(payloadJson),
+			ReplyTo:       p.reply_queue.Name,
+			Body:          []byte(payloadJson),
 		})
 
 	if replyHandler != nil {
@@ -281,4 +271,59 @@ func (actor *ActorBase) WaitForReply(payload *Payload, timeout_seconds int) {
 			delete(actor.reply_handlers, payload.PayloadId)
 		}
 	}
+}
+
+func (actor *ActorBase) GetListenQueueSize() int {
+	q, err := actor.channel.QueueInspect(actor.queue)
+	if err != nil {
+		return 0
+	} else {
+		return q.Messages
+	}
+}
+
+func (actor *ActorBase) DeclareListenerQueue() error {
+	q, err := actor.channel.QueueDeclare(
+		actor.queue, // Name
+		true,        // Durable
+		false,       // Delete when unused
+		false,       // Exclusive
+		false,       // No-wait
+		nil,         // Arguments
+	)
+	if err != nil {
+		return err
+	} else {
+		actor.listener_queue = &q
+		return nil
+	}
+}
+
+func (actor *ActorBase) StartConsumption() (<-chan amqp.Delivery, error) {
+	msgs, err := actor.channel.Consume(
+		actor.listener_queue.Name, // Queue
+		"",    // Consumer
+		false, // Auto-ack
+		false, // Exclusive
+		false, // No-local
+		false, // No-wait
+		nil,   // Args
+	)
+	return msgs, err
+}
+
+func (actor *ActorBase) SetListenQueue(queue amqp.Queue) {
+	actor.listener_queue = &queue
+}
+
+func (actor *ActorBase) GetQueueName() string {
+	return actor.queue
+}
+
+func (actor *ActorBase) GetChannel() *amqp.Channel {
+	return actor.channel
+}
+
+func (actor *ActorBase) GetExchange() string {
+	return actor.exchange
 }
