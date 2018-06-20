@@ -11,7 +11,6 @@ type Programmer struct {
 
 type ProgrammerActions interface {
 	Init()
-	InitTest()
 
 	Hello()
 	Goodbye()
@@ -20,10 +19,6 @@ type ProgrammerActions interface {
 
 func (p *Programmer) Init(connStr string) {
 	p.ActorBase.Init("programmer", connStr)
-}
-
-func (p *Programmer) InitTest(connStr string) {
-	p.ActorBase.InitTest("programmer", connStr)
 }
 
 func (p *Programmer) HelloStr(payloadContent string, replyHandler interface{}) error {

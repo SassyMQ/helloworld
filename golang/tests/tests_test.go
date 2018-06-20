@@ -2,12 +2,10 @@ package tests
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"testing"
 	"time"
 
-	"github.com/eejai42/helloworld/golang/smq"
 	"github.com/eejai42/sassymq-golang/errors"
 )
 
@@ -16,11 +14,11 @@ func TestRouting(t *testing.T) {
 	test_results := make([]ActorResults, 0)
 
 	// Initiate actors
-	programmer := new(smq.Programmer)
-	programmer.InitTest("amqp://guest:guest@localhost:5672/local")
+	programmer := new(TestActor)
+	programmer.Init("programmer", "amqp://guest:guest@localhost:5672/local")
 
-	world := new(smq.World)
-	world.InitTest("amqp://guest:guest@localhost:5672/local")
+	world := new(TestActor)
+	world.Init("world", "amqp://guest:guest@localhost:5672/local")
 
 	// Create payloads
 	programmer_payload := programmer.CreatePayload()
@@ -30,21 +28,30 @@ func TestRouting(t *testing.T) {
 	world_payload.Content = "World"
 
 	// Send payloads by routing keys
-	programmer.SendPayload("world.general.programmer.hello", programmer_payload, nil)
-	programmer.SendPayload("programmer.general.world.wassup", programmer_payload, nil)
-	programmer.SendPayload("world.general.programmer.goodbye", programmer_payload, nil)
-	programmer.SendPayload("world.general.programmer.getallgalaxies", programmer_payload, nil)
+	programmer.SendPayload("world.general.programmer.hello", programmer_payload)
+	programmer.SendPayload("programmer.general.world.wassup", programmer_payload)
+	programmer.SendPayload("world.general.programmer.goodbye", programmer_payload)
+	programmer.SendPayload("world.general.programmer.getallgalaxies", programmer_payload)
 
-	world.SendPayload("world.general.programmer.hello", world_payload, nil)
-	world.SendPayload("programmer.general.world.wassup", world_payload, nil)
-	world.SendPayload("world.general.programmer.goodbye", world_payload, nil)
-	world.SendPayload("world.general.programmer.getallgalaxies", world_payload, nil)
+	world.SendPayload("world.general.programmer.hello", world_payload)
+	world.SendPayload("programmer.general.world.wassup", world_payload)
+	world.SendPayload("world.general.programmer.goodbye", world_payload)
+	world.SendPayload("world.general.programmer.getallgalaxies", world_payload)
 
-	time.Sleep(3 * time.Second)
+	// Consume Queues
+	go programmer.ListenAndConsume()
+	go world.ListenAndConsume()
 
-	for programmer.GetListenQueueSize()+world.GetListenQueueSize() > 0 {
-		count := programmer.GetListenQueueSize() + world.GetListenQueueSize()
-		fmt.Println("Messages remaining: ", count)
+	// Check Queues' Statuses
+	for {
+		msgs := 0
+		msgs = msgs + programmer.GetListenQueueSize()
+		msgs = msgs + world.GetListenQueueSize()
+		if msgs > 0 {
+			time.Sleep(50 * time.Millisecond)
+		} else {
+			break
+		}
 	}
 
 	// Build report structure

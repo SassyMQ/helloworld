@@ -11,17 +11,12 @@ type World struct {
 
 type WorldActions interface {
 	Init()
-	InitTests()
 
 	WhatsUp()
 }
 
 func (p *World) Init(connStr string) {
 	p.ActorBase.Init("world", connStr)
-}
-
-func (p *World) InitTest(connStr string) {
-	p.ActorBase.InitTest("world", connStr)
 }
 
 func (p *World) WhatsUpStr(payloadContent string, replyHandler interface{}) error {
