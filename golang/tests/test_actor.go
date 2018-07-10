@@ -2,14 +2,15 @@ package tests
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 
-	"github.com/eejai42/helloworld/golang/smq"
-	"github.com/eejai42/sassymq-golang/errors"
 	"github.com/google/uuid"
+	"github.com/eejai42/projectXYZ/smq"
 	"github.com/streadway/amqp"
 )
 
+// TestActor - Allows for generic testing of multiple routing keys
 type TestActor struct {
 	found_routing_keys map[string][]string
 	smq.ActorBase
@@ -26,7 +27,7 @@ func (ta *TestActor) Init(actorName string, connStr string) {
 	ta.ActorBase.InitBase(actorName, connStr)
 
 	err := ta.ResetFoundRoutingKeys()
-	errors.DefaultWithPanic(err, "Failed to initiate handlers map")
+	DefaultWithPanic(err, "Failed to initiate handlers map")
 }
 
 func (ta *TestActor) ResetFoundRoutingKeys() error {
@@ -36,9 +37,9 @@ func (ta *TestActor) ResetFoundRoutingKeys() error {
 
 func (ta *TestActor) ListenAndConsume() {
 	err := ta.ActorBase.DeclareListenerQueue()
-	errors.DefaultWithPanic(err, "Failed to declare listener queue")
+	DefaultWithPanic(err, "Failed to declare listener queue")
 	msgs, err := ta.ActorBase.StartConsumption()
-	errors.DefaultWithPanic(err, "Failed to register a consumer")
+	DefaultWithPanic(err, "Failed to register a consumer")
 
 	go func() {
 		for d := range msgs {
@@ -60,10 +61,12 @@ func (ta *TestActor) GetFoundRoutingKeys() map[string][]string {
 
 func (ta *TestActor) SendPayload(routingKey string, payload *smq.Payload) error {
 	payloadId, err := uuid.NewUUID()
-	errors.DefaultWithPanic(err, "Failed to create uuid")
+	DefaultWithPanic(err, "Failed to create uuid")
 	payload.PayloadId = payloadId.String()
 	payloadJson, err := json.Marshal(payload)
-	errors.DefaultWithPanic(err, "Can't marshal payload as Json")
+	DefaultWithPanic(err, "Can't marshal payload as Json")
+
+	fmt.Printf("Sending %s from %s\n\n", routingKey, payload.Content)
 	c := ta.GetChannel()
 	e := ta.GetExchange()
 	err = c.Publish(

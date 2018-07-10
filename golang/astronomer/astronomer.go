@@ -8,6 +8,7 @@ import (
 type Astronomer struct { 
     AstronomerId string
     createdTime time.Time
+    DOB string
     Name string
 }
 

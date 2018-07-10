@@ -31,9 +31,6 @@ GO
           [createdTime] DATETIME NULL
           -- DATETIME.
         ,
-          [FirstSeen] INT NULL
-          -- SHORT.
-        ,
           [Name] NVARCHAR(150) NULL
           -- TEXT.
         ,
@@ -64,6 +61,9 @@ GO
           [createdTime] DATETIME NULL
           -- DATETIME.
         ,
+          [DOB] NVARCHAR(150) NULL
+          -- TEXT.
+        ,
           [Name] NVARCHAR(150) NULL
           -- TEXT.
         ,
@@ -91,9 +91,6 @@ GO
           [FoundBy] NVARCHAR(150) NULL
           -- TEXT.
         ,
-          [NasaID] NVARCHAR(150) NULL
-          -- TEXT.
-        ,
           [Galaxy] NVARCHAR(150) NULL
           -- TEXT.
         ,
@@ -102,9 +99,6 @@ GO
         ,
           [Notes] NVARCHAR(150) NULL
           -- TEXT.
-        ,
-          [LightYearsFromEarth] INT NULL
-          -- SHORT.
         ,
         
         CONSTRAINT [PK_Star] PRIMARY KEY CLUSTERED
@@ -121,14 +115,14 @@ GO
 DECLARE @ObjectName NVARCHAR(100)
 
     
-    -- COUNT: 7
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'GalaxyId' AND Object_ID = Object_ID(N'Galaxy'))
     BEGIN
             ALTER TABLE [dbo].[Galaxy] ADD [GalaxyId] NVARCHAR(150) NULL;
     END
 
     
-    -- COUNT: 7
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'createdTime' AND Object_ID = Object_ID(N'Galaxy'))
     BEGIN
             ALTER TABLE [dbo].[Galaxy] ADD [createdTime] DATETIME NULL;
@@ -146,25 +140,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
-    IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'FirstSeen' AND Object_ID = Object_ID(N'Galaxy'))
-    BEGIN
-            ALTER TABLE [dbo].[Galaxy] ADD [FirstSeen] INT NULL;
-    END
-
-    
-    ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Galaxy] ALTER COLUMN [FirstSeen] INT NULL;
-
-    
-
-	END
-
-    
-    -- COUNT: 7
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Galaxy'))
     BEGIN
             ALTER TABLE [dbo].[Galaxy] ADD [Name] NVARCHAR(150) NULL;
@@ -182,7 +158,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'HaveVisited' AND Object_ID = Object_ID(N'Galaxy'))
     BEGIN
             ALTER TABLE [dbo].[Galaxy] ADD [HaveVisited] BIT NULL;
@@ -200,7 +176,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 7
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Notes' AND Object_ID = Object_ID(N'Galaxy'))
     BEGIN
             ALTER TABLE [dbo].[Galaxy] ADD [Notes] NVARCHAR(150) NULL;
@@ -218,14 +194,14 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 4
+    -- COUNT: 5
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'AstronomerId' AND Object_ID = Object_ID(N'Astronomer'))
     BEGIN
             ALTER TABLE [dbo].[Astronomer] ADD [AstronomerId] NVARCHAR(150) NULL;
     END
 
     
-    -- COUNT: 4
+    -- COUNT: 5
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'createdTime' AND Object_ID = Object_ID(N'Astronomer'))
     BEGIN
             ALTER TABLE [dbo].[Astronomer] ADD [createdTime] DATETIME NULL;
@@ -243,7 +219,25 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 4
+    -- COUNT: 5
+    IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'DOB' AND Object_ID = Object_ID(N'Astronomer'))
+    BEGIN
+            ALTER TABLE [dbo].[Astronomer] ADD [DOB] NVARCHAR(150) NULL;
+    END
+
+    
+    ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Astronomer] ALTER COLUMN [DOB] NVARCHAR(150) NULL;
+
+    
+
+	END
+
+    
+    -- COUNT: 5
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Astronomer'))
     BEGIN
             ALTER TABLE [dbo].[Astronomer] ADD [Name] NVARCHAR(150) NULL;
@@ -261,14 +255,14 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 8
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'StarId' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [StarId] NVARCHAR(150) NULL;
     END
 
     
-    -- COUNT: 8
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'createdTime' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [createdTime] DATETIME NULL;
@@ -286,7 +280,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 8
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'FoundBy' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [FoundBy] NVARCHAR(150) NULL;
@@ -304,25 +298,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 8
-    IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'NasaID' AND Object_ID = Object_ID(N'Star'))
-    BEGIN
-            ALTER TABLE [dbo].[Star] ADD [NasaID] NVARCHAR(150) NULL;
-    END
-
-    
-    ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Star] ALTER COLUMN [NasaID] NVARCHAR(150) NULL;
-
-    
-
-	END
-
-    
-    -- COUNT: 8
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Galaxy' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [Galaxy] NVARCHAR(150) NULL;
@@ -340,7 +316,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 8
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [Name] NVARCHAR(150) NULL;
@@ -358,7 +334,7 @@ DECLARE @ObjectName NVARCHAR(100)
 	END
 
     
-    -- COUNT: 8
+    -- COUNT: 6
     IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Notes' AND Object_ID = Object_ID(N'Star'))
     BEGIN
             ALTER TABLE [dbo].[Star] ADD [Notes] NVARCHAR(150) NULL;
@@ -370,24 +346,6 @@ DECLARE @ObjectName NVARCHAR(100)
 
 
         ALTER TABLE [dbo].[Star] ALTER COLUMN [Notes] NVARCHAR(150) NULL;
-
-    
-
-	END
-
-    
-    -- COUNT: 8
-    IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'LightYearsFromEarth' AND Object_ID = Object_ID(N'Star'))
-    BEGIN
-            ALTER TABLE [dbo].[Star] ADD [LightYearsFromEarth] INT NULL;
-    END
-
-    
-    ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Star] ALTER COLUMN [LightYearsFromEarth] INT NULL;
 
     
 

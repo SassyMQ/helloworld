@@ -15,6 +15,8 @@ curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"durable\":tru
                          
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"durable\":true}" -XPUT $SERVER/api/queues/$VHOST/world.all | grep HTTP
                          
+curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"durable\":true}" -XPUT $SERVER/api/queues/$VHOST/universe.all | grep HTTP
+                         
 
 
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"type\":\"topic\",\"durable\":true,\"internal\":false}" -XPUT $SERVER/api/exchanges/$VHOST/programmermic | grep HTTP
@@ -29,6 +31,10 @@ curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"type\":\"topi
                                 
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"type\":\"topic\",\"durable\":true,\"internal\":true}" -XPUT $SERVER/api/exchanges/$VHOST/world.all | grep HTTP
                                 
+curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"type\":\"topic\",\"durable\":true,\"internal\":false}" -XPUT $SERVER/api/exchanges/$VHOST/universemic | grep HTTP
+                         
+curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"type\":\"topic\",\"durable\":true,\"internal\":true}" -XPUT $SERVER/api/exchanges/$VHOST/universe.all | grep HTTP
+                                
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"world.general.programmer.#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/programmermic/e/world.general | grep HTTP
                          
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/world.general/e/world.all | grep HTTP
@@ -42,6 +48,12 @@ curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\"
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/world.all/q/world.all | grep HTTP
                          
 curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/programmer.all/e/world.all | grep HTTP
+                         
+curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"world.general.universe.#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/universemic/e/world.general | grep HTTP
+                         
+curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/universe.all/q/universe.all | grep HTTP
+                         
+curl -i -k -u $USER:$PASS -H "content-type:application/json" -d"{\"routing_key\":\"#\",\"arguments\":{}}" -XPOST $SERVER/api/bindings/$VHOST/e/world.all/e/universe.all | grep HTTP
                          
 
                     

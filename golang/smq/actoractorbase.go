@@ -323,3 +323,4 @@ func (actor *ActorBase) GetChannel() *amqp.Channel {
 func (actor *ActorBase) GetExchange() string {
 	return actor.exchange
 }
+

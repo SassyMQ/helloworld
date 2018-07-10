@@ -1,8 +1,8 @@
 package smq
 
 import (
-	"github.com/eejai42/helloworld/golang/galaxy"
-	"github.com/eejai42/helloworld/golang/star"
+	"github.com/sassymq/helloworld/golang/galaxy"
+	"github.com/sassymq/helloworld/golang/star"
 )
 
 type Payload struct {

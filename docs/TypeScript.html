@@ -32,7 +32,7 @@ export class Home {
         
         
          // Say "Goodbye" to World
-         // Say byby
+         // Say cya
          var payload = this.programmer.createPayload();
          payload. = {...};
          this.programmer.Goodbye(payload, (reply) {
@@ -99,7 +99,7 @@ export class Home {
         
         
          // Hear Goodbye from Programmer
-         // Say byby
+         // Say cya
          this.world.onGoodbye((message) {
             // Do something here with <b>message.body.</b>
          });
@@ -110,6 +110,42 @@ export class Home {
          this.world.onGetAllGalaxies((message) {
             // Do something here with <b>message.body.</b>
          });
+        
+        
+         // Hear Yo Yo from Universe
+         // I'm ej
+         this.world.onYoYo((message) {
+            // Do something here with <b>message.body.</b>
+         });
+        
+
+    }
+
+}
+
+</code></pre><h2>Universe</h2><pre><code>
+import { Component } from '@angular/core';
+...
+import { SMQUniverse } from '../../../providers/sassymq/gss/smqUniverse';
+...
+export class Home {
+
+    constructor(public navCtrl: NavController, 
+                public navParams: NavParams, 
+                public universe: SMQUniverse) {
+
+         <b>// Try "Saying" some things</b>
+        
+        
+         // Say "Yo Yo" to World
+         // I'm ej
+         var payload = this.universe.createPayload();
+         payload. = {...};
+         this.universe.YoYo(payload, (reply) {
+            // Do something here with <b>reply.body.</b>
+         });
+        
+
         
 
     }

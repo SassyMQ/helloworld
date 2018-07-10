@@ -15,12 +15,18 @@
     <From>Programmer</From>
     <Message>Goodbye</Message>
     <To>World</To>
-    <Description>Say byby</Description>
+    <Description>Say cya</Description>
   </Lexicon>
   <Lexicon>
     <From>Programmer</From>
     <Message>GetAllGalaxies</Message>
     <To>World</To>
+  </Lexicon>
+  <Lexicon>
+    <From>Universe</From>
+    <Message>YoYo</Message>
+    <To>World</To>
+    <Description>I'm ej</Description>
   </Lexicon>
 </Lexicons><Tests>
   <Test>
@@ -62,6 +68,7 @@
     <Queue>programmer.all</Queue>
     <Username>programmer</Username>
     <Password>programmer</Password>
+    <Description>This is a programmer, trying to reach out to the world for the first time</Description>
   </Actor>
   <Actor>
     <Actors>World</Actors>
@@ -69,5 +76,6 @@
     <Queue>world.all</Queue>
     <Username>world</Username>
     <Password>world</Password>
+    <Description>This is the world, always waiting for newbies.</Description>
   </Actor>
 </Actors></HelloWorld>

@@ -7,7 +7,7 @@
   "SaveDisabled": false,
   "SSoTmeProjectId": "89f9808a-2b0e-4bc6-b76c-ea35f3492f0e",
   "Name": "helloworld",
-  "RootPath": "C:\\Users\\auto1\\go\\src\\github.com\\eejai42\\helloworld",
+  "RootPath": "C:\\Users\\auto1\\go\\src\\github.com\\sassymq\\helloworld",
   "ProjectSettings": [
     {
       "ProjectSettingId": "40d7f8e6-ba38-460b-9d9e-6d2d620d38bb",
@@ -51,10 +51,10 @@
         ]
       },
       "CLIHandler": null,
-      "ProjectTranspilerId": "3b1db1ad-34f7-44d0-8b30-d766aa39f84b",
+      "ProjectTranspilerId": "a12c30f0-9e4c-4fe1-bdb8-b33a4133271d",
       "Name": "GSheetToSmql",
       "RelativePath": "/ssot",
-      "CommandLine": "sassymq/gsheet-to-smql https://docs.google.com/spreadsheets/d/1qHcmWH3xN98wGA5o3G1oyLqY3R70dd4TCOYKf3YYMeo/edit#gid=0"
+      "CommandLine": "sassymq/gsheet-to-smql https://docs.google.com/spreadsheets/d/1qHcmWH3xN98wGA5o3G1oyLqY3R70dd4TCOYKf3YYMeo/edit#gid=0 https://docs.google.com/spreadsheets/d/1qHcmWH3xN98wGA5o3G1oyLqY3R70dd4TCOYKf3YYMeo/edit#gid=518630714"
     },
     {
       "MatchedTranspiler": {
@@ -128,6 +128,43 @@
     },
     {
       "MatchedTranspiler": {
+        "TranspilerId": "ffb7991d-b064-4709-aa6d-bc56aebd5834",
+        "Name": "SmqlToGolangRouteTests",
+        "DisplayName": "Smql To Golang Route Tests",
+        "Description": "Smql To Golang Route Tests",
+        "CreatedOn": "2018-07-09T20:41:18.267",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-HIvU-0zwCNxYLBnv3j41QQ",
+        "LowerName": "smqltogolangroutetests",
+        "UpperName": "SMQLTOGOLANGROUTETESTS",
+        "LowerHyphenName": "smql-to-golang-route-tests",
+        "ReadMeMD": "Turns an SMQL file into a golang script, which when compiled and run will generate a JSON Route Test results file which lists each actor, and which messages were recieved.",
+        "ExampleMD": "ssotme sassymq/smql-to-golang-route-tests -i SomeLexicon.smql",
+        "InputFileTypeId": "87c1c579-ea4f-47db-a064-f26f9ca1d91e",
+        "OutputFileTypeId": "e827499f-f215-4b35-8dae-6bd423a75e4c",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "f8bff4a8-52a9-4b36-8026-78bde47762a6",
+            "TranspilerId": "ffb7991d-b064-4709-aa6d-bc56aebd5834",
+            "Name": "v1",
+            "CreatedOn": "2018-07-09T20:41:33.937",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "56807304-c7ac-45f9-89a7-bd8ff77459e5",
+      "Name": "SmqlToGolangRouteTests",
+      "RelativePath": "/golang",
+      "CommandLine": "sassymq/smql-to-golang-route-tests -i ..\\ssot\\Lexicon.smql -p amqp-path=amqp://guest:guest@localhost/SMQ"
+    },
+    {
+      "MatchedTranspiler": {
         "TranspilerId": "9b86e4ae-d540-4766-8ad6-fb3893290a4f",
         "Name": "SmqlToRabbitMQConfig",
         "DisplayName": "Smql To Rabbit M Q Config",
@@ -171,7 +208,7 @@
         "Description": "Smql To CSharp RabbitMQ",
         "CreatedOn": "2017-09-15T22:13:19.003",
         "IsActive": true,
-        "CurrentRoutingKey": "amq.gen-0dlmenmzFCebAz5mrtILxw",
+        "CurrentRoutingKey": "amq.gen-OAIekX3nEbrQdBoWyB7yLg",
         "LowerName": "smqltocsharprabbitmq",
         "UpperName": "SMQLTOCSHARPRABBITMQ",
         "LowerHyphenName": "smql-to-c-sharp-rabbit-m-q",
@@ -662,6 +699,42 @@
       "Name": "XlsxToJson",
       "RelativePath": "/ssot",
       "CommandLine": "xlsx-to-json -i HelloWorld.Xlsx"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "9155e40c-f45c-4b95-af27-fd7c13aa6f74",
+        "Name": "SmqlAndRouteTestsToHtml",
+        "DisplayName": "Smql And Route Tests To Html",
+        "Description": "Smql and Route Tests To Html",
+        "CreatedOn": "2018-07-09T20:41:29.687",
+        "IsActive": true,
+        "CurrentRoutingKey": "",
+        "LowerName": "smqlandrouteteststohtml",
+        "UpperName": "SMQLANDROUTETESTSTOHTML",
+        "LowerHyphenName": "smql-and-route-tests-to-html",
+        "ReadMeMD": "Turns an SMQL File and Golang Route Test Results JSon file into an HTML Description of what SHOULD be happening, and what actually happened during the tests.",
+        "InputFileTypeId": "87c1c579-ea4f-47db-a064-f26f9ca1d91e",
+        "OutputFileTypeId": "d8fc84b7-442d-4c7a-92a0-eefc11391934",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "57a89de1-b48c-4ee3-a70e-0515f872dbd9",
+            "TranspilerId": "9155e40c-f45c-4b95-af27-fd7c13aa6f74",
+            "Name": "v1",
+            "CreatedOn": "2018-07-09T20:41:33.937",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "5618343d-6480-44da-8a10-350fab0906d4",
+      "Name": "SmqlAndRouteTestsToHtml",
+      "RelativePath": "/golang/tests",
+      "CommandLine": "sassymq/smql-and-route-tests-to-html -i ..\\..\\ssot\\Lexicon.smql -i .\\sassymq_report.json"
     }
   ]
 }

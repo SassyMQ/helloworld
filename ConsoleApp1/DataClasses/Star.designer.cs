@@ -34,9 +34,6 @@ namespace helloworld.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "FoundBy")]
         public String FoundBy { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "NasaID")]
-        public String NasaID { get; set; }
-    
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Galaxy")]
         public String Galaxy { get; set; }
     
@@ -45,9 +42,6 @@ namespace helloworld.Lib.DataClasses
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Notes")]
         public String Notes { get; set; }
-    
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "LightYearsFromEarth")]
-        public Nullable<Int32> LightYearsFromEarth { get; set; }
     
 
         

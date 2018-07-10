@@ -1,7 +1,7 @@
 package smq
-
+        
 import (
-	"fmt"
+    "fmt"
 )
 
 type World struct {
@@ -11,25 +11,29 @@ type World struct {
 
 type WorldActions interface {
 	Init()
-
-	WhatsUp()
+	
+    WhatsUp()
 }
 
 func (p *World) Init(connStr string) {
 	p.ActorBase.Init("world", connStr)
 }
 
+
 func (p *World) WhatsUpStr(payloadContent string, replyHandler interface{}) error {
-	payload := p.CreatePayload()
-	payload.Content = payloadContent
-	return p.WhatsUp(payload, replyHandler)
-}
+    payload := p.CreatePayload()
+    payload.Content = payloadContent
+    return p.WhatsUp(payload, replyHandler)
+}    
 
 func (p *World) WhatsUp(payload *Payload, replyHandler interface{}) error {
 	err := p.SendPayload("programmer.general.world.whatsup", payload, replyHandler)
-	fmt.Println("Sending payload to: 'programmer.general.world.whatsup' - ", payload.PayloadId)
+    fmt.Println("Sending payload to: 'programmer.general.world.whatsup' - ", payload.PayloadId)
 	return err
 }
+    
+
+
 
 func (p *World) AddProgrammerHelloHandler(value interface{}) error {
 	err := p.AddHandler("world.general.programmer.hello", value)
@@ -43,3 +47,9 @@ func (p *World) AddProgrammerGetAllGalaxiesHandler(value interface{}) error {
 	err := p.AddHandler("world.general.programmer.getallgalaxies", value)
 	return err
 }
+func (p *World) AddUniverseYoYoHandler(value interface{}) error {
+	err := p.AddHandler("world.general.universe.yoyo", value)
+	return err
+}
+
+    

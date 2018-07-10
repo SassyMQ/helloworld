@@ -8,7 +8,6 @@ import (
 type Galaxy struct { 
     GalaxyId string
     createdTime time.Time
-    FirstSeen int
     Name string
     HaveVisited bool
     Notes string

@@ -38,7 +38,6 @@
     <Galaxy>
       <GalaxyId>recH4wXkMEd5S4pUf</GalaxyId>
       <createdTime>2018-05-15T16:19:00Z</createdTime>
-      <FirstSeen>2018</FirstSeen>
       <Name>Milky Way</Name>
       <HaveVisited>true</HaveVisited>
       <Stars>rec4OZu12JfXa8NhZ</Stars>
@@ -67,15 +66,12 @@
           </full>
         </thumbnails>
       </Attachments>
-      <Notes>fadsf
-fdsa
-
+      <Notes>This is the milky way...
 </Notes>
     </Galaxy>
     <Galaxy>
       <GalaxyId>reco5yAJlcUMSsWyf</GalaxyId>
       <createdTime>2018-05-15T16:19:00Z</createdTime>
-      <FirstSeen>1500</FirstSeen>
       <Name>Andromeda</Name>
       <Stars>rec99vLonTpbG6fZS</Stars>
       <Stars>recxrcWyXxL6KA83R</Stars>
@@ -85,7 +81,6 @@ fdsa
     <Galaxy>
       <GalaxyId>recxdClgul2sqgv4i</GalaxyId>
       <createdTime>2018-05-25T22:27:55Z</createdTime>
-      <FirstSeen>1270</FirstSeen>
       <Name>Some Other Galax</Name>
       <Stars>recutl0fSpATFivMb</Stars>
       <Attachments>
@@ -129,9 +124,10 @@ fdsa
     <Astronomer>
       <AstronomerId>recuwCgXwqQFaLgym</AstronomerId>
       <createdTime>2018-06-18T00:48:05Z</createdTime>
+      <DOB>5/2/1580</DOB>
       <Stars>rec4OZu12JfXa8NhZ</Stars>
       <Stars>reckXigFuEaoPr8k8</Stars>
-      <Name>Galalao</Name>
+      <Name>Galilao</Name>
     </Astronomer>
   </Astronomers>
   <Stars>
@@ -139,9 +135,7 @@ fdsa
       <StarId>rec4OZu12JfXa8NhZ</StarId>
       <createdTime>2018-05-15T16:19:47Z</createdTime>
       <FoundBy>recuwCgXwqQFaLgym</FoundBy>
-      <NasaID>BAC1235</NasaID>
       <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
-      <LightYearsFromEarth>0</LightYearsFromEarth>
       <Name>Earths Sun</Name>
       <Notes>fdfdsfdsf
 </Notes>
@@ -150,9 +144,7 @@ fdsa
       <StarId>rec99vLonTpbG6fZS</StarId>
       <createdTime>2018-05-15T16:19:47Z</createdTime>
       <FoundBy>rec9gnOWBVCMa3zwB</FoundBy>
-      <NasaID>DXY1553</NasaID>
       <Galaxy>reco5yAJlcUMSsWyf</Galaxy>
-      <LightYearsFromEarth>1000</LightYearsFromEarth>
       <Name>Alpha Centauri</Name>
       <Notes>dfdfd
 </Notes>
@@ -167,7 +159,6 @@ fdsa
       <createdTime>2018-05-15T16:19:47Z</createdTime>
       <FoundBy>recuwCgXwqQFaLgym</FoundBy>
       <Galaxy>recH4wXkMEd5S4pUf</Galaxy>
-      <LightYearsFromEarth>1258</LightYearsFromEarth>
       <Name>Some Other Star</Name>
       <Notes>fdfds</Notes>
     </Star>

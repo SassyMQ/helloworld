@@ -35,6 +35,10 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
                         this.OnProgrammerGetAllGalaxiesReceived(payload, bdea);
                         break;
                     
+                    case "world.general.universe.yoyo":
+                        this.OnUniverseYoYoReceived(payload, bdea);
+                        break;
+                    
                 }
 
             }
@@ -85,6 +89,20 @@ namespace SMQ.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.ProgrammerGetAllGalaxiesReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: YoYo from Universe
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> UniverseYoYoReceived;
+        protected virtual void OnUniverseYoYoReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.UniverseYoYoReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.UniverseYoYoReceived(this, plea);
             }
         }
 

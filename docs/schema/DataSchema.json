@@ -40,18 +40,6 @@
                     "IsCollection": "0"
                   },
                   {
-                    "Name": "FirstSeen",
-                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
-                    "DataType": "SHORT",
-                    "Length": "",
-                    "MaxLength": "4",
-                    "Text": "",
-                    "IsNullable": "1",
-                    "IsPrimaryKey": "0",
-                    "IsAttribute": "0",
-                    "IsCollection": "0"
-                  },
-                  {
                     "Name": "Name",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "TEXT",
@@ -80,7 +68,7 @@
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "TEXT",
                     "Length": "150",
-                    "MaxLength": "15",
+                    "MaxLength": "26",
                     "Text": "100",
                     "IsNullable": "1",
                     "IsPrimaryKey": "0",
@@ -130,6 +118,18 @@
                     "Length": "",
                     "MaxLength": "20",
                     "Text": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "DOB",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "150",
+                    "MaxLength": "8",
+                    "Text": "100",
                     "IsNullable": "1",
                     "IsPrimaryKey": "0",
                     "IsAttribute": "0",
@@ -216,18 +216,6 @@
                     }
                   },
                   {
-                    "Name": "NasaID",
-                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
-                    "DataType": "TEXT",
-                    "Length": "150",
-                    "MaxLength": "7",
-                    "Text": "100",
-                    "IsNullable": "1",
-                    "IsPrimaryKey": "0",
-                    "IsAttribute": "0",
-                    "IsCollection": "0"
-                  },
-                  {
                     "Name": "Galaxy",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "TEXT",
@@ -264,20 +252,8 @@
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "TEXT",
                     "Length": "150",
-                    "MaxLength": "15",
+                    "MaxLength": "26",
                     "Text": "100",
-                    "IsNullable": "1",
-                    "IsPrimaryKey": "0",
-                    "IsAttribute": "0",
-                    "IsCollection": "0"
-                  },
-                  {
-                    "Name": "LightYearsFromEarth",
-                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
-                    "DataType": "SHORT",
-                    "Length": "",
-                    "MaxLength": "4",
-                    "Text": "",
                     "IsNullable": "1",
                     "IsPrimaryKey": "0",
                     "IsAttribute": "0",

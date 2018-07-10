@@ -8,6 +8,7 @@ curl    -i -k -u %1:%2 -H "content-type:application/json" -d "{""configure"":"".
 
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""durable"":true}" -XPUT %4/api/queues/%3/programmer.all
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""durable"":true}" -XPUT %4/api/queues/%3/world.all
+curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""durable"":true}" -XPUT %4/api/queues/%3/universe.all
 
 
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""durable"":true,""internal"":false}" -XPUT %4/api/exchanges/%3/programmermic
@@ -16,6 +17,8 @@ curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""durable"":true,""internal"":false}" -XPUT %4/api/exchanges/%3/worldmic
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""durable"":true,""internal"":true}" -XPUT %4/api/exchanges/%3/world.general
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""durable"":true,""internal"":true}" -XPUT %4/api/exchanges/%3/world.all
+curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""durable"":true,""internal"":false}" -XPUT %4/api/exchanges/%3/universemic
+curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""type"":""topic"",""durable"":true,""internal"":true}" -XPUT %4/api/exchanges/%3/universe.all
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""world.general.programmer.#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/programmermic/e/world.general
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/world.general/e/world.all
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/programmer.all/q/programmer.all
@@ -23,5 +26,8 @@ curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""pro
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/programmer.general/e/programmer.all
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/world.all/q/world.all
 curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/programmer.all/e/world.all
+curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""world.general.universe.#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/universemic/e/world.general
+curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/universe.all/q/universe.all
+curl -i -k -u %1:%2 -H "content-type:application/json" -d"{""routing_key"":""#"",""arguments"":{}}" -XPOST %4/api/bindings/%3/e/world.all/e/universe.all
 
                     

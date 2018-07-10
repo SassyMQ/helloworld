@@ -1,6 +1,6 @@
 package tests
 
 type ActorResults struct {
-	Actor    string              `json:"actor"`
-	Recieved map[string][]string `json:"recieved"`
+	Actor    string              `json:"Actor"`
+	Received map[string][]string `json:"Received"`
 }
