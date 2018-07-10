@@ -299,6 +299,11 @@ func (actor *ActorBase) DeclareListenerQueue() error {
 	}
 }
 
+func (actor *ActorBase) PurgeListenerQueue() error {
+	_, err := actor.channel.QueuePurge(actor.queue, false)
+	return err
+}
+
 func (actor *ActorBase) StartConsumption() (<-chan amqp.Delivery, error) {
 	msgs, err := actor.channel.Consume(
 		actor.listener_queue.Name, // Queue
@@ -323,4 +328,3 @@ func (actor *ActorBase) GetChannel() *amqp.Channel {
 func (actor *ActorBase) GetExchange() string {
 	return actor.exchange
 }
-

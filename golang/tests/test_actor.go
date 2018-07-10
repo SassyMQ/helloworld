@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/google/uuid"
 	"github.com/eejai42/projectXYZ/smq"
+	"github.com/google/uuid"
 	"github.com/streadway/amqp"
 )
 
@@ -40,7 +40,10 @@ func (ta *TestActor) ListenAndConsume() {
 	DefaultWithPanic(err, "Failed to declare listener queue")
 	msgs, err := ta.ActorBase.StartConsumption()
 	DefaultWithPanic(err, "Failed to register a consumer")
+	go ta.ConsumeForever(msgs)
+}
 
+func (ta *TestActor) ConsumeForever(msgs <-chan amqp.Delivery) {
 	go func() {
 		for d := range msgs {
 			log.Printf("%s  received a message: %s", ta.ActorBase.GetQueueName(), d.RoutingKey)
